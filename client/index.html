@@ -5,10 +5,9 @@
  <meta name="viewport" content="width=device-width,initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  <title>Portfolio Homepage</title>
 </head>
-<body class="body-background">
+<body>
  <header>
  <nav class="navbar navbar-expand-lg navbar-dark header shadow">
   <div class="container-fluid mx-xl-5">
@@ -34,13 +33,13 @@
       <input class="form-control w-50 mr-2" type="search" placeholder="e.g. JavaScript" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <button type="button" class="btn btn-success mx-2 "><span class="mx-2"><i class="far fa-file-alt"></i></span>Download Cv</button>
+    <a href="/assets/documents/resume.docx" type="button" class="btn btn-success mx-2 " download><span class="mx-2"><i class="far fa-file-alt"></i></span>Download Cv</a>
     </div>
     </div>
   </div>
  </nav>
  </header>
- <main id="main" class="container-fluid position-relative mb-5 d-inline-block">
+ <main id="main" class="container-fluid position-relative mb-5">
   <div class="container bg-white mb-5 bio">
    <picture class="d-block w-50 mx-auto mx-md-1 d-md-inline float-md-left">
       <source srcset="/assets/images/medium-bio.jpg" media="(min-width: 768px)">
@@ -65,42 +64,38 @@
   <nav class="navbar navbar-dark footer vw-100">
    <div class="container-xl">
     <ul class="navbar-nav position-relative mr-2 footer__main">
-     <div class="mr-2 mx-md-3">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link mr-2 mx-md-3" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/course-projects">Course Projects</a>
+        <a class="nav-link mr-2 mx-md-3" href="/course-projects">Course Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/solo-projects">Solo Projects</a>
+        <a class="nav-link mr-2 mx-md-3" href="/solo-projects">Solo Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/side-projects">Side Projects</a>
+        <a class="nav-link mr-2 mx-md-3" href="/side-projects">Side Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/certificates">certificates</a>
+        <a class="nav-link mr-2 mx-md-3" href="/certificates">certificates</a>
       </li>
-      </div>
     </ul>
     <ul class="navbar-nav position-relative footer__misc">
-     <div class="mx-2 mx-md-3">
       <li class="nav-item">
-        <a class="nav-link" href="/contact-us">Contact Us</a>
+        <a class="nav-link mr-2 mx-md-3" href="/contact-us">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/Sitemap">Sitemap</a>
+        <a class="nav-link mr-2 mx-md-3" href="/Sitemap">Sitemap</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/Future-plans">Future Plans</a>
+        <a class="nav-link mr-2 mx-md-3" href="/Future-plans">Future Plans</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/Blog">Blog</a>
+        <a class="nav-link mr-2 mx-md-3" href="/Blog">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/Feedback">Feedback</a>
+        <a class="nav-link mr-2 mx-md-3" href="/Feedback">Feedback</a>
       </li>
-      </div>
     </ul>
     <div class="footer__title mx-auto mx-md-0 d-block d-sm-inline">
     <div class="row">
@@ -116,27 +111,28 @@
     </ul>
     </div>
     </div>
-<ul class="navbar-nav d-block d-md-inline mx-auto mx-md-0 footer__social">
+<div class="navbar-nav d-block d-md-inline mx-auto mx-md-0 footer__social">
        <div class="row">
-       <li class="nav-item col-3 col-md-4 d-inline-block d-md-inline">
+       <span class="nav-item col-3 col-md-4 d-inline-block d-md-inline">
         <a class="nav-link" href="https://www.facebook.com/paulrooneyweb" target="_blank"><i class="fab fa-facebook-square"></i></a>
-      </li>
-      <li class="nav-item col-3 col-md-4 d-inline-block d-md-inline mr-md-2">
+      </span>
+      <span class="nav-item col-3 col-md-4 d-inline-block d-md-inline mr-md-2">
         <a class="nav-link" href="https://www.linkedin.com/in/paul-rooney-6760b0b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </li>
-      <li class="nav-item col-3 col-md-4 d-inline-block d-md-inline">
+      </span>
+      <span class="nav-item col-3 col-md-4 d-inline-block d-md-inline">
         <a class="nav-link" href="https://www.facebook.com/paulrooneyweb" target="_blank"><i class="fab fa-github-square"></i></a>
-      </li>
-      <li class="nav-item col-3 col-md-4 d-inline-block d-md-inline mr-md-2">
+      </span>
+      <span class="nav-item col-3 col-md-4 d-inline-block d-md-inline mr-md-2">
         <a class="nav-link" href="http://m.me/paulrooney" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-      </li>
+      </span>
       </div>
-  </ul>
+  </div>
   </div>
   </nav>
  </footer>
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a4c1da6775.js" crossorigin="anonymous"></script>
 </body>
 </html>

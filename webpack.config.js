@@ -23,7 +23,7 @@ class RunAfterCompile { //copy img files from from dev to build folders.
 
 let cssConfig = {// set config for css module.exports
         test: /\.css$/i,
-        use: [ MiniCssExtractPlugin.loader,'css-loader']
+        use: [ MiniCssExtractPlugin.loader,'css-loader?url=false']
       }
 	  
 	  let pages = fse.readdirSync('./client').filter(function(file){// find all html documents in the client folder
@@ -63,6 +63,9 @@ if (currentTask == "dev"){
     host: '0.0.0.0'
   },
   config.mode = 'development'
+  
+  config.plugins.push( 
+  new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}))
 	
 	
 }
