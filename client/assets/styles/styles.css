@@ -41,9 +41,6 @@ body{
  box-shadow: 1px 1px rgba(0,0,0,.4),3px 3px grey;
 }
 
-.bio_link{
- color: #0072ed;
-}
 
 .bio__pic{
 transform: translateY(-50%) translateX(-10%);
