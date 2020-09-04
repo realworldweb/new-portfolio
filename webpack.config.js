@@ -12,10 +12,19 @@ class RunAfterCompile {
 		complier.hooks.done.tap('copy images', function() {
 			
 			fse.copySync('./client/assets/images', './docs/assets/images')//copy img files from from dev to build folders.
-   fse.copySync('./client/assets/documents', './docs/assets/documents')//copy doc files from from dev to build folders.
+   
+			
+		})
+  
+  complier.hooks.done.tap('copy docs', function() {
+			
+		fse.copySync('./client/assets/documents', './docs/assets/documents')//copy doc files from from dev to build folders.
+   
 			
 		})
 		
+  
+  
 		
 	}
 	
