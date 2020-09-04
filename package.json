@@ -1,0 +1,26 @@
+{
+  "name": "express-portfolio",
+  "version": "1.0.0",
+  "description": "portfolio site node express mongodb",
+  "scripts": {
+    "dev": "webpack-dev-server --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "paul rooney",
+  "license": "ISC",
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "html-webpack-plugin": "^4.4.1",
+    "mini-css-extract-plugin": "^0.11.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
