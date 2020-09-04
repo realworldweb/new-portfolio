@@ -55,6 +55,11 @@ border-radius: 50%;
 
 }
 
+.bio__link{
+ color: #0072ed !important;
+ 
+}
+
 .bio__info--second-line{
  margin-left: 10rem;
 }
