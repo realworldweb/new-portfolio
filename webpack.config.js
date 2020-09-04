@@ -16,6 +16,16 @@ class RunAfterCompile {
 			
 		})
   
+ 
+}
+	
+	
+}
+
+class BuildDocs { 
+	
+	apply(complier) {
+  
   complier.hooks.done.tap('copy docs', function() {
 			
 		fse.copySync('./client/assets/documents', './docs/assets/documents')//copy doc files from from dev to build folders.
@@ -107,7 +117,8 @@ if (currentTask == "build"){
   
   config.plugins.push( 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
-  new RunAfterCompile()
+  new RunAfterCompile(),
+  new BuildDocs()
   )
 	
 }
