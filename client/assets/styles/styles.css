@@ -64,6 +64,10 @@ border-radius: 50%;
  margin-left: 10rem;
 }
 
+.projects{
+  background-color: #3f5260;
+}
+
 .footer{
  background-color: #3f5260;
  position: relative;

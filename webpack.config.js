@@ -1,61 +1,51 @@
-const currentTask = process.env.npm_lifecycle_event //get current task from npm eg build dev
-const path = require('path') //file directories module
+const currentTask = process.env.npm_lifecycle_event
+const path = require('path')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const fse = require('fs-extra')//better filesystem management 
+const fse = require('fs-extra')
+
+const postCSSPlugins = [
+  require('postcss-import'),
+  require('postcss-mixins'),
+  require('postcss-simple-vars'),
+  require('postcss-nested'),
+  require('autoprefixer'),
+  require('postcss-hexrgba')
+]
 
 
-class RunAfterCompile { 
+class RunAfterCompile {
 	
 	apply(complier) {
 		
 		complier.hooks.done.tap('copy images', function() {
 			
-			fse.copySync('./client/assets/images', './docs/assets/images')//copy img files from from dev to build folders.
-   
-			
-		})
-  
- 
-}
-	
-	
-}
-
-class BuildDocs { 
-	
-	apply(complier) {
-  
-  complier.hooks.done.tap('copy docs', function() {
-			
-		fse.copySync('./client/assets/documents', './docs/assets/documents')//copy doc files from from dev to build folders.
-   
+			fse.copySync('./client/assets/images', './docs/assets/images')
 			
 		})
 		
-  
-  
 		
 	}
 	
 	
 }
 
-let cssConfig = {// set config for css module.exports
+let cssConfig = {
         test: /\.css$/i,
-        use: [ MiniCssExtractPlugin.loader,'css-loader?url=false']
+        use: [ 'css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
       }
 	  
-	  let pages = fse.readdirSync('./client').filter(function(file){// find all html documents in the client folder
-		  return file.endsWith('.html')                             
-		  }).map(function(page){ // for each page return new htmlwebpack tempalte
+	  let pages = fse.readdirSync('./client').filter(function(file){
+		  return file.endsWith('.html')
+		  }).map(function(page){
 			  return new HtmlWebpackPlugin({
 			  filename: page,
 			  template: `./client/${page}`
 			  })
 		  })
 
-let config = {// build module.exports
+let config = {
 	entry: './client/assets/scripts/index.js',
 	plugins: pages,
 	module: {
@@ -67,7 +57,7 @@ let config = {// build module.exports
 }
 
 if (currentTask == "dev"){
- 
+	cssConfig.use.unshift('style-loader')
 	config.output =  {
     filename: 'bundled.js',
     path: path.resolve(__dirname, 'client')
@@ -83,9 +73,6 @@ if (currentTask == "dev"){
     host: '0.0.0.0'
   },
   config.mode = 'development'
-  
-  config.plugins.push( 
-  new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}))
 	
 	
 }
@@ -103,7 +90,8 @@ if (currentTask == "build"){
 		
 	}
 	})
-	
+		cssConfig.use.unshift(MiniCssExtractPlugin.loader)
+		postCSSPlugins.push(require('cssnano'))
 	config.output =  {
     filename: '[name].[chunkhash].js',
 	chunkFilename: '[name].[chunkhash].js',
@@ -115,10 +103,10 @@ if (currentTask == "build"){
   
   },
   
-  config.plugins.push( 
+  config.plugins.push(
+  new CleanWebpackPlugin(), 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
-  new RunAfterCompile(),
-  new BuildDocs()
+  new RunAfterCompile()
   )
 	
 }
