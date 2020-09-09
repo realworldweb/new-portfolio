@@ -99,6 +99,6 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
  
 
  
- 
+ module.exports = app;
  module.exports.handler = serverless(app);
 
