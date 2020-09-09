@@ -4,12 +4,14 @@
  z-index: 3;
  
  @mixin atMedium{
-  margin-top: 260px;
+  margin-top: 300px;
  }
  
  @mixin atLarge{
   font-size: 1.2rem;
  }
+ 
+ 
 
 &__pic{
  transform: translateY(-50%);
@@ -37,16 +39,31 @@
 }
 }
 
-&__support{
- @mixin atMedium{
- transform: translateY(-300%);
+&__top{
+  position: relative;
+  left: 7%;
+ @mixin atLarge{
+ 
+  left: 20%;
  }
  
- @mixin atLarge{
-  
-  transform: translateY(-250%);
+ @mixin atbootstrapXL{
+ 
+  left: 0%;
+ }
   
  }
+
+&__support{
+ 
+ @mixin atMedium{
+  transform: translateX(-45%) translateY(-300%);
+  
+ }
+ @mixin atLarge{
+ transform: translateX(-7%) translateY(-300%);
+ }
+ 
  
  @mixin atbootstrapXL{
   
@@ -58,7 +75,7 @@
 
 &__full-columns{
 @mixin atMedium{
-transform: translateY(-50%);
+transform: translateX(-7%) translateY(-50%);
 }
 }
 
