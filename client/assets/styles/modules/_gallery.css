@@ -1,0 +1,95 @@
+.gallery{
+ font-size: 5rem;
+ @mixin atLarge{
+ font-size: 8rem;
+ }
+
+&__main-pic{
+ height: auto;
+ max-width: 80%;
+ 
+ 
+ @mixin atMedium{
+ max-width: 60%;
+ }
+ @mixin atLarge{
+  
+max-width: 70%;
+
+ }
+
+}
+
+.left, .right{
+ display: none;
+ 
+ @mixin atMedium{
+ display: inline-block;
+ position: relative;
+ top: 30%;
+ transform: rotate(90deg) translateY(-160%);
+ color: #f1ede1;
+ }
+ @mixin atLarge{
+  transform: rotate(90deg) translateY(-90%);
+ }
+ 
+}
+
+.left:hover, .right:hover{
+ 
+ color: rgba(#f1ede1, .7);
+ 
+ 
+}
+
+.right{
+
+ transform: rotate(270deg) translateY(-160%);
+
+ @mixin atLarge{
+  
+  transform: rotate(270deg) translateY(-90%);
+ }
+ 
+ 
+}
+
+&__thumb{
+transform: scale(0.8);
+box-shadow:2px 2px rgba(0,0,0,.4),5px 5px grey;
+transition: all ease-out .5s;
+
+ &--active{
+  transform: scale(1);
+  box-shadow:3px 3px rgba(0,0,0,.3),7px 7px grey;
+  transition: all ease-in .5s;
+ }
+ 
+ 
+}
+
+&__swipe{
+ 
+ font-size: 2.5rem;
+ background-color: #f1ede1;
+ color: $mainNavy;
+ line-height: 0;
+ border-radius: 10%;
+ width: 70%;
+ 
+ 
+ .left{
+ transform: rotate(90deg) translateX(40%);
+ }
+ 
+ .right{
+  transform: rotate(270deg) translateX(-41%);
+ }
+ 
+ 
+}
+ 
+
+
+}

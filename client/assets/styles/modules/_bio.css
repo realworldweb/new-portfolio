@@ -1,0 +1,76 @@
+.bio{
+ margin-top: 160px;
+ box-shadow: 1px 1px rgba(0,0,0,.4),3px 3px grey;
+ z-index: 3;
+ 
+ @mixin atMedium{
+  margin-top: 260px;
+ }
+ 
+ @mixin atLarge{
+  font-size: 1.2rem;
+ }
+
+&__pic{
+ transform: translateY(-50%);
+ box-shadow: .5px .5px rgba(0,0,0,.4),1px 1px grey;
+ border-radius: 50%;
+ max-width: 100%;
+ @mixin atMedium{
+  transform: translateY(-30%) translateX(30%);
+  box-shadow: 3px 3px rgba(0,0,0,.4),6px 6px grey;
+  border-radius: 0;
+ }
+ @mixin atbootstrapXL{
+  transform: translateY(-30%) translateX(0%);
+  
+ }
+}
+
+&__header{
+ color: #3f5260;
+ margin-top: -4rem;
+ font-size: 2.5rem;
+@mixin atMedium{
+ font-size: 4rem;
+ margin-top: -10rem;
+}
+}
+
+&__support{
+ @mixin atMedium{
+ transform: translateY(-300%);
+ }
+ 
+ @mixin atLarge{
+  
+  transform: translateY(-250%);
+  
+ }
+ 
+ @mixin atbootstrapXL{
+  
+  transform: translateY(0%);
+  
+ }
+ 
+}
+
+&__full-columns{
+@mixin atMedium{
+transform: translateY(-50%);
+}
+}
+
+&__link{
+ color: #0072ed !important;
+ 
+}
+
+&__info--second-line{
+ @mixin atMedium{
+ margin-left: 10rem;
+ }
+}
+
+}

@@ -1,53 +1,96 @@
 const express = require('express'); //your original BE server
 const app = express();
 const serverless = require('serverless-http'); 
+const cors = require('cors')
 
 const router = express.Router();
 
 
 const {MongoClient} = require('mongodb');
 
-
 const url = "mongodb+srv://realworldred:Blackjack21@cluster0.vk8gi.mongodb.net/portfolio?retryWrites=true&w=majority";//authenticate
-const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true});
-  
+
+let projectsList;
+let certsList;
+
 async function main (){
+ 
+ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true}); 
  
  try{
  await client.connect();
- await listDatabases(client);
+ await projectsMount(client);//mount projects so we can run various requests
+ await certsMount(client);//mount certs so we can run various requests
  }catch(e){
   console.error(e);
- }finally{
-  await client.close()
-  
- }
  }
  
- main().catch(console.error)
-
-let projects = [];
-
-async function listDatabases(client){
  
- const databasesList= await client.db().admin().listDatabases();
  
- console.log('databases:')
- 
- for(let db of databasesList.databases){
-  
-    projects.push({'name': db.name});
-
+ async function projectsMount(client){// load products and pass it to express route for processing.
+ console.log('ran')
+   projectsList = await client.db('portfolio').collection('project');
+   
+   
  }
+ 
+ async function certsMount(client){// load certs and pass it to express route for processing.
+ console.log('ran')
+   certsList = await client.db('portfolio').collection('courses');
+   
+   
+ }
+ 
 };
 
 
 
- router.get('/', async (req, res) => {
+app.use(cors());
+
+router.get('/projects', async (req, res) => {// return all from api projects
+ await main().catch(console.error);// call main to start mongo
+  const data = await projectsList.find({}).toArray();
   
-  const data = await projects;
   res.json(data);
+
+ 
+  
 });
+
+router.get('/projects/:id', async (req, res) => {// query projects api 
+  await main().catch(console.error);// call main to start mongo
+  const data = await projectsList.find({"name" : req.params.name});
+  
+  res.json(data);
+  
+ 
+  
+});
+
+router.get('/certs', async (req, res) => {//return all certs from api 
+ await main().catch(console.error);// call main to start mongo
+ 
+  const data = await certsList.find({}).toArray();
+  
+  res.json(data);
+
+ 
+  
+});
+
+router.get('/certs/:id', async (req, res) => {//return all certs from api 
+ await main().catch(console.error);// call main to start mongo
+  const data = await certsList.find({}).toArray();
+  
+  res.json(data);
+
+ 
+  
+});
+
+ 
+
+ 
 
  app.use('/api', router);
  
