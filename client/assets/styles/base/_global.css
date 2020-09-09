@@ -1,3 +1,10 @@
+html{
+ min-width: 100%;
+ max-width: 100%;
+ overflow-x: hidden;
+ 
+}
+
 body{
  background-color: rgba(220,211,180,0.4);
  display: flex;
