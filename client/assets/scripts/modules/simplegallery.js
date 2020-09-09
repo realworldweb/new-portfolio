@@ -17,6 +17,7 @@ class Gallery{
        this.currentImage = 0
        this.activeThumb
        this.touched = 0;
+       this.touchedLast = 10;
        this.events()
        this.loadImgs()
         
@@ -57,7 +58,7 @@ class Gallery{
   
   this.touched = e.touches[0].clientX
   
-  if(this.touched > e.touches[0].clientX){
+  if(this.touched > this.touchedlast){
    
    this.toggleImg(e,'left')
    
@@ -67,6 +68,8 @@ class Gallery{
   this.toggleImg(e,'right')
   
  }
+ 
+ this.touchedlast = e.touches[0].clientX
   
  }
  
@@ -86,7 +89,7 @@ class Gallery{
  this.mainImg.src = `/assets/images/${this.imgArray[this.currentImage][0].small.url}`
  this.mainImg.alt = this.imgArray[this.currentImage][0].alt
   }
- if(e.target.classList.value.includes('right') || e.target.parentNode.classList.value.includes('right')|| dir === 'right'){
+ if(e.target.classList.value.includes('right') || e.target.parentNode.classList.value.includes('right') || dir === 'right'){
  if (this.currentImage < this.imgArray.length-1){
     this.currentImage++
     this.activeThumb.classList.remove('gallery__thumb--active')
