@@ -25,7 +25,7 @@ class Gallery{
 	
 	events() {
 		
-		this.eventArea.addEventListener("click", e => this.toggleImg(e, none))//event for left/right nav
+		this.eventArea.addEventListener("click", e => this.toggleImg(e,'none'))//event for left/right nav
   this.swipeArea.addEventListener("ontouchmove", e => this.handleTouch(e))
 		this.thumbs.addEventListener("click", e => this.thumbChange(e))//event for selection by thumbs
 
@@ -59,12 +59,12 @@ class Gallery{
   
   if(this.touched > e.touches[0].clientX){
    
-   this.toggleImg(e, left)
+   this.toggleImg(e,'left')
    
   }
   else{
    
-  this.toggleImg(e, right)
+  this.toggleImg(e,'right')
   
  }
   
