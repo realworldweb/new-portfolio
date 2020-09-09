@@ -11,7 +11,7 @@ const router = express.Router();
 
 const {MongoClient} = require('mongodb');
 
-const url = "process.env.mongoServer";//authenticate
+const url = process.env.mongoServer;//authenticate
 
 let projectsList;
 let certsList;
@@ -34,7 +34,7 @@ async function main (){
  console.log('ran')
    projectsList = await client.db('portfolio').collection('project');
    
-   console.log(projectsList)
+   
    
  }
  
