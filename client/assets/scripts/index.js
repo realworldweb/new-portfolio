@@ -1,5 +1,5 @@
 import '../styles/styles.css';
-
+const regeneratorRuntime = require("regenerator-runtime");
 import Axios from 'axios';
 
 import Gallery from './modules/simplegallery.js';
