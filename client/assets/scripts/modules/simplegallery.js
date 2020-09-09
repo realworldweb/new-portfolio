@@ -2,7 +2,7 @@ class Gallery{
 	constructor(certsList){
         
        this.eventArea = document.querySelector(".gallery")//galley event section
-       this.swipeArea = document.querySelector(".gallery__swipe")
+       this.swipeArea = document.querySelector(".gallery__swipe")//swipe event for smaller screens
        this.mainImg = document.querySelector(".gallery__main-pic")//image to change sm
        this.mdImg = document.querySelector("#medium")//image to change medium
        this.lgImg = document.querySelector("#large")//image to change large
@@ -16,8 +16,7 @@ class Gallery{
        })
        this.currentImage = 0
        this.activeThumb
-       this.touched = 0;
-       this.touchedLast = 10;
+       this.touched = 0
        this.events()
        this.loadImgs()
         
@@ -27,7 +26,7 @@ class Gallery{
 	events() {
 		
 		this.eventArea.addEventListener("click", e => this.toggleImg(e,'none'))//event for left/right nav
-  this.swipeArea.addEventListener("touchstart", e => this.handleTouchstart(e))
+  this.swipeArea.addEventListener("touchstart", e => this.handleTouchStart(e))
   this.swipeArea.addEventListener("touchmove", e => this.handleTouchMove(e))
 		this.thumbs.addEventListener("click", e => this.thumbChange(e))//event for selection by thumbs
 
@@ -58,7 +57,7 @@ class Gallery{
  handleTouchStart(e){
   
   this.touched = e.touch[0].clientX
-  return this.touched;
+  return this.touched
  }
  
  handleTouchMove(e){
