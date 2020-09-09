@@ -56,13 +56,13 @@ class Gallery{
  
  handleTouchStart(e){
   
-  this.touched = e.touch[0].clientX
+  this.touched = e.touches[0].clientX
   return this.touched
  }
  
  handleTouchMove(e){
   
- if(this.touched > e.touch[0].clientX){
+ if(this.touched > e.touches[0].clientX){
    
    this.toggleImg(e,'right')
    
