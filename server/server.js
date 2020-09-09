@@ -34,6 +34,7 @@ async function main (){
  console.log('ran')
    projectsList = await client.db('portfolio').collection('project');
    
+   console.log(projectsList)
    
  }
  
