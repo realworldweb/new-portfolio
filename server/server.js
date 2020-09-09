@@ -92,9 +92,9 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
 
  
 
- app.use('/api', router);
+ app.use('.netlify/functions/server', router);
  
- app.listen(4000)
+
  
  module.exports = app;
  module.exports.handler = serverless(app);
