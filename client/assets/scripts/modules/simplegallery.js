@@ -55,7 +55,7 @@ class Gallery{
 	}
  
  handleTouch(e){
-  
+  console.log(ran)
   this.touched = e.touches[0].clientX
   
   if(this.touched > this.touchedlast){
