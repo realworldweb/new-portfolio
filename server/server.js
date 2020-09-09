@@ -1,6 +1,9 @@
 const express = require('express'); //your original BE server
-const app = express();
+
 const serverless = require('serverless-http'); 
+
+const app = express();
+
 const cors = require('cors')
 
 const router = express.Router();
@@ -96,6 +99,6 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
  
 
  
- module.exports = app;
+ 
  module.exports.handler = serverless(app);
 
