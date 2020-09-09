@@ -9,7 +9,7 @@ body{
  background-color: rgba(220,211,180,0.4);
  display: flex;
  flex-direction: column;
- position: absolute;
+ position: relative;
  min-width: 100%;
  min-height: 100%;
  overflow-x: hidden;
