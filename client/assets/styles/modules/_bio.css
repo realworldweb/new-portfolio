@@ -39,8 +39,10 @@
 }
 
 &__top{
+ @mixin atMedium{
   position: relative;
   left: 7%;
+ }
  @mixin atLarge{
  
   left: 20%;
