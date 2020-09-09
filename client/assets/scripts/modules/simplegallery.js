@@ -27,6 +27,7 @@ class Gallery{
 	events() {
 		
 		this.eventArea.addEventListener("click", e => this.toggleImg(e,'none'))//event for left/right nav
+  this.swipeArea.addEventListener("touchstart", e => this.handleTouchstart(e))
   this.swipeArea.addEventListener("touchmove", e => this.handleTouchMove(e))
 		this.thumbs.addEventListener("click", e => this.thumbChange(e))//event for selection by thumbs
 
@@ -54,23 +55,24 @@ class Gallery{
   }
 	}
  
- handleTouchMove(e){
-  console.log('ran')
-  this.touched = e.touches[0].clientX
+ handleTouchStart(e){
   
-  if(this.touched > this.touchedlast){
+  this.touched = e.touch[0].clientX
+  return this.touched;
+ }
+ 
+ handleTouchMove(e){
+  
+ if(this.touched > e.touch[0].clientX){
    
-   this.toggleImg(e,'left')
+   this.toggleImg(e,'right')
    
   }
   else{
    
-  this.toggleImg(e,'right')
+  this.toggleImg(e,'left')
   
  }
- 
- this.touchedlast = e.touches[0].clientX
-  
  }
  
 	toggleImg(e, dir) {
