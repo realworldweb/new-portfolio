@@ -95,7 +95,7 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
 
  
 
- app.use('.netlify/functions/server', router);
+ app.use('/.netlify/functions/server', router);
  
 
  
