@@ -8,7 +8,7 @@ const router = express.Router();
 
 const {MongoClient} = require('mongodb');
 
-const url = "mongodb+srv://realworldred:Blackjack21@cluster0.vk8gi.mongodb.net/portfolio?retryWrites=true&w=majority";//authenticate
+const url = "process.env.mongoServer";//authenticate
 
 let projectsList;
 let certsList;
