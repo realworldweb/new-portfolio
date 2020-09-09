@@ -11,7 +11,7 @@ let certsList;
 const loadData = async () =>{
  
 try {
-  const response = await Axios.get('/.netlify/functions/server/certs');
+  const response = await Axios.get('https://confident-panini-5ece9c.netlify.app/.netlify/functions/server/projectsnetlify/functions/server/certs');
   certsList = response.data;
   const certsContainer = document.getElementById('certsContainer')
   certsContainer.innerHTML =`<div class="d-flex flex-wra gallery justify-content-center">
