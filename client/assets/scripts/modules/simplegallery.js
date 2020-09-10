@@ -1,5 +1,3 @@
-import { debounce } from "debounce";
-
 class Gallery{
 	constructor(certsList){
         
@@ -19,6 +17,7 @@ class Gallery{
        this.currentImage = 0
        this.activeThumb
        this.touched = 0
+       this.touchedLast = 0
        this.events()
        this.loadImgs()
         
@@ -28,8 +27,9 @@ class Gallery{
 	events() {
 		
 		this.eventArea.addEventListener("click", e => this.toggleImg(e,'none'))//event for left/right nav
-  this.swipeArea.addEventListener("touchstart", e => this.handleTouchStart(e))
-  this.swipeArea.addEventListener("touchmove", e => debounce(this.handleTouchMove(e)))
+  this.swipeArea.addEventListener("touchstart", e => this.handleTouch(e,'start'))
+  this.swipeArea.addEventListener("touchmove", e => this.handleTouch(e,'move'))
+  this.swipeArea.addEventListener("touchend", e => this.handleTouch(e,'end'))
 		this.thumbs.addEventListener("click", e => this.thumbChange(e))//event for selection by thumbs
 
 		
@@ -56,25 +56,36 @@ class Gallery{
   }
 	}
  
- handleTouchStart(e){
-  
+ handleTouch(e, type){
+  if(type === start){
   this.touched = e.touches[0].clientX
   return this.touched
- }
- 
- handleTouchMove(e){
+  }
   
- if(this.touched < e.touches[0].clientX){
+  if(type === move){
+  this.touchedLast = e.touches[0].clientX
+  return this.touchedLast
+  }
+  
+  
+  if(type === end){
+   if(this.touched < this.touchedLast){
    
    this.toggleImg(e,'right')
-   
+   return
   }
   else{
    
   this.toggleImg(e,'left')
-  
+  return
  }
+   
+  }
  }
+ 
+ 
+ 
+ 
  
 	toggleImg(e, dir) {
    this.activeThumb = document.querySelector('.gallery__thumb--active')//call current active thumb
