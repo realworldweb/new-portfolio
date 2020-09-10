@@ -6,11 +6,10 @@
 
 &__main-pic{
  height: auto;
- max-width: 80%;
- 
- 
+ max-width: 90%;
+ transition: all 1s ease-in;
  @mixin atMedium{
- max-width: 60%;
+ max-width: 80%;
  }
  @mixin atLarge{
   
@@ -27,7 +26,7 @@ max-width: 70%;
  display: inline-block;
  position: relative;
  top: 30%;
- transform: rotate(90deg) translateY(-160%);
+ transform: rotate(90deg) translateY(-80%);
  color: #f1ede1;
  }
  @mixin atLarge{
@@ -45,7 +44,7 @@ max-width: 70%;
 
 .right{
 
- transform: rotate(270deg) translateY(-160%);
+ transform: rotate(270deg) translateY(-80%);
 
  @mixin atLarge{
   
