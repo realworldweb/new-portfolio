@@ -58,7 +58,7 @@ class Gallery{
  
  handleTouchStart(e){
   console.log('start')
-  this.touched = e.touches[0].clientX
+  this.touched = e.touch[0].clientX
   return this.touched
  }
  
