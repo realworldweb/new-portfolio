@@ -40,6 +40,12 @@
   }
 }
 
+@define-mixin atFull {
+  @media (min-width: 1800px) {
+    @mixin-content;
+  }
+}
+
 @define-mixin clearfix {
   &::after {
     content: "";

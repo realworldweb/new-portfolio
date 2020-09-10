@@ -65,6 +65,10 @@
  transform: translateX(-7%) translateY(-300%);
  }
  
+ @mixin atFull{
+ transform: translateX(0%) translateY(0%);
+ }
+ 
  
 }
 
