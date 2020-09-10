@@ -56,19 +56,22 @@ class Gallery{
   }
 	}
  
- handleTouch(e, type){
-  if(type === 'start'){
+ handleTouchStart(e){
+  console.log('start')
   this.touched = e.touches[0].clientX
   return this.touched
-  }
+ }
+ 
   
-  if(type === 'move'){
+  handleTouchMove(e){
+   console.log('move')
   this.touchedLast = e.touches[0].clientX
   return this.touchedLast
   }
   
   
-  if(type === 'end'){
+  handleTouchEnd(e){
+   console.log('end')
    if(this.touched < this.touchedLast){
    
    this.toggleImg(e,'right')
@@ -81,7 +84,7 @@ class Gallery{
  }
    
   }
- }
+ 
  
  
  
