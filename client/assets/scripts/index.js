@@ -4,18 +4,43 @@ import Axios from 'axios';
 
 
 import Gallery from './modules/simplegallery.js';
+import Projects from '.modules/projects.js'
 let certsList;
+let projectsList;
+const loadProjects = async () =>{
+ 
+try {
+  const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/projects');
+  projectsList = response.data;
+  const projectsContainer = document.getElementById('projectsContainer')
+  
+if(projectsContainer !== null){
+ return new Projects(projectsList);
+}else{
+ 
+ return projectsList;
+ 
+}
+
+ }catch (error){
+  
+  console.error(error);
+  
+ }
+}
 
 
 
-
-const loadData = async () =>{
+const loadCerts = async () =>{
+ 
  
 try {
   const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/certs');
   certsList = response.data;
   const certsContainer = document.getElementById('certsContainer')
-  certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-center">
+  
+if(certsContainer !== null){
+certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-center">
   <div class="row">
 <i id="control-left" class="fas fa-caret-down left"></i>
 <picture class="">
@@ -28,6 +53,11 @@ try {
 </div>
 `
 return new Gallery(certsList);
+}else{
+ 
+ return certsList;
+ 
+}
  }catch (error){
   
   console.error(error);
@@ -37,4 +67,7 @@ return new Gallery(certsList);
 
 
 
-document.getElementById('body').addEventListener('onload', loadData());
+
+
+
+document.getElementById('body').addEventListener('onload', loadCerts());
