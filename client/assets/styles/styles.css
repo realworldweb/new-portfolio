@@ -6,6 +6,8 @@
 @import "modules/_projects-home";
 @import "modules/_certs-home";
 @import "modules/_gallery";
+@import "modules/_filter";
+@import "modules/_contentpane";
 @import "modules/_footer";
 
 

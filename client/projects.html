@@ -42,10 +42,43 @@
  </nav>
  </header>
  <main id="main" class="d-block position-relative mb-5">
- <div id="projects">
- <div id="projectContainer">
+ <div id="filterToggle" class="d-block d-md-none d-lg-none position-absolute p-2 m-3 filter__toggle"><span class="mx-1">filters</span><i class="fas fa-angle-double-right opacity"></i></div>
+ <div id="projects" class="row my-3 m-lg-5">
+ <div id="filter" class="d-flex flex-column col-3 col-xl-2 projects__filter filter filter--hidden">
+ <div id="filters" class="d-lg-inline my-5 filter__filters">
+ <p class="d-block text-center">Filters</p>
+ <div class="list-group mb-2">
+ <p class="d-block text-center">Type</p>
+  <a href="#" class="list-group-item text-center">Solo</a>
+  <a href="#" class="list-group-item text-center">Course</a>
+  <a href="#" class="list-group-item text-center">Side</a>
+</div>
+<div class="list-group mb-2">
+ <p class="d-block text-center">Language</p>
+  <a href="#" class="list-group-item text-center">Html5</a>
+  <a href="#" class="list-group-item text-center">CSS3</a>
+  <a href="#" class="list-group-item text-center">JavaScript</a>
+</div>
+<div class="list-group">
+ <p class="d-block text-center">Frameworks<br>Tools</p>
+  <a href="#" class="list-group-item text-center">Vue</a>
+  <a href="#" class="list-group-item text-center">BootStrap</a>
+  <a href="#" class="list-group-item text-center">Node.js</a>
+  <a href="#" class="list-group-item text-center">webpack</a>
+  <a href="#" class="list-group-item text-center">Mongo.db</a>
+  <a href="#" class="list-group-item text-center">Express</a>
+</div>
+<div class="list-group">
+ <p class="d-block text-center">Project Status</p>
+  <a href="#" class="list-group-item text-center">Live</a>
+  <a href="#" class="list-group-item text-center">Finished</a>
+  <a href="#" class="list-group-item text-center">draft</a>
+  <a href="#" class="list-group-item text-center">current</a>
+</div>
  </div>
- <div id="filter">
+ </div>
+ <div id="projectsPane" class="d-flex col-12 col-md-9 col-xl-10 flex-wrap justify-content-center contentpane">
+ <h1 class="d-block col-12 text-center mb-5 contentpane__title">Projects</h1>
  </div>
  </div>
   

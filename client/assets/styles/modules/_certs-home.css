@@ -1,11 +1,13 @@
 .certs{
   margin-top: -15rem;
-  background-color: #3f5260;
+  background-color: $mainNavy;
   width: 100vw;
   
   h1{
    padding-top: 15rem;
    font-size: 4rem;
   }
+  
+  
   
  }

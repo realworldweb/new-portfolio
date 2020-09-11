@@ -1,0 +1,35 @@
+.contentpane{
+
+color: $mainNavy;
+
+&__title{
+font-size: 2rem;
+
+@mixin atSmall{
+font-size: 3rem;
+}
+
+@mixin atMedium{
+ font-size: 5rem;
+ 
+}
+
+
+}
+
+.projects__card{
+ 
+ @mixin atMedium {
+  width: 80%;
+  height: auto;
+  
+ }
+ 
+ 
+}
+
+
+
+
+
+}

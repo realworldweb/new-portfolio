@@ -7,7 +7,7 @@ html{
 }
 
 body{
- background-color: rgba(220,211,180,0.4);
+ background-color: rgba($mainCream,0.4);
  display: flex;
  flex-direction: column;
  position: relative;
@@ -16,4 +16,27 @@ body{
  overflow-x: hidden;
  justify-content: space-between; 
  box-sizing: border-box;
+}
+
+.display{
+ 
+ display: inline;
+ 
+ &--none{
+  
+  display: none;
+  
+ }
+ 
+}
+
+.opacity{
+ opacity: 1;
+ transition: all .5s ease-in;
+ 
+ &--none{
+  
+ opacity: 0;
+ }
+ 
 }
