@@ -6,7 +6,13 @@ import Axios from 'axios';
 import Gallery from './modules/simplegallery.js';
 import Projects from './modules/projects.js'
 import Filter from './modules/filter.js'
+
+const filterContainer = document.querySelector('.filter')
+
+if(filterContainer !== null){
 let filter = new Filter()
+}
+
 let certsList;
 let projectsList;
 const loadProjects = async () =>{
