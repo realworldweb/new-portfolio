@@ -5,6 +5,7 @@ import Axios from 'axios';
 
 import Gallery from './modules/simplegallery.js';
 import Projects from './modules/projects.js'
+import Certs from './modules/certs.js'
 import Filter from './modules/filter.js'
 
 const filterContainer = document.querySelector('.filter')
@@ -73,7 +74,16 @@ return new Gallery(certsList);
  }
 }
 
+const certsPane = document.getElementById('certsPane')
 
+if(certsPane !== null){
+
+const certs = async () =>  {
+const certsInfo = await loadCerts()
+
+ return new Certs(certsInfo)}
+ certs();
+}
 
 
 

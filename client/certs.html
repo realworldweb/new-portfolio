@@ -7,7 +7,7 @@
  <meta name="keywords" content="devlopment, programming, coder, jobseeker, for hire">
  <meta name="description" content="portfolio site showcasing HTML, CSS and JavaScript">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
- <title>Portfolio Homepage</title>
+ <title>Portfolio Projects</title>
 </head>
 <body id="body">
  <header>
@@ -42,78 +42,32 @@
  </nav>
  </header>
  <main id="main" class="d-block position-relative mb-5">
-  <div class="container bg-white d-block mx-auto position-relative mb-5 pb-3 pb-md-0 bio">
-   <picture class="position-relative mx-auto ml-md-1 mr-md-5 d-md-inline float-md-left">
-      <source sizes="500px" srcset="/assets/images/large-bio.webp 500w" media="(min-width: 1800px)">
-      <source sizes="400px" srcset="/assets/images/large-bio.webp 452w" media="(min-width: 1200px)">
-      <source sizes="291px" srcset="/assets/images/medium-bio.webp 350w" media="(min-width: 768px)">
-      <img sizes="180px" srcset="/assets/images/small-bio.webp 300w" src="/assets/images/small-bio.webp" alt="dapper bio pic" class="d-block mx-auto bio__pic">
-   </picture>
-  <h1 class="d-block ml-md-5 text-center bio__header">Biography</h1>
-  <div class="d-flex-column ml-md-5 px-lg-5 px-md-1 px-lg-0">
-  <div class="bio__top">
-	 <p><span class="mr-5 d-block d-sm-inline  mr-md-3">Name: &nbsp; &nbsp; &nbsp;</span><span class="ml-sm-5">Paul Rooney</span><span></span></p>
-	 <p><span class="mr-5 d-block d-sm-inline mr-md-3">Education:</span><span class="ml-sm-5">Bsc in Business and IT</span><span class="d-block w-60 bio__info--second-line"> &#40;major web development&#41;</span><span></span></p>
-	 <p><span class="mr-2 d-block d-sm-inline mr-md-3">Git-Hub:</span><span class="ml-sm-5"><a href="https://github.com/realworldweb" class="bio__link">https://github.com/realworldweb</a></span><span></span></p>
-	 <p><span class="mr-5 d-block d-sm-inline  mr-md-2">Main-Skills:</span><span class="ml-sm-5">HTML, CSS and JavaScript</span><span></span></p>
-	 </div>
-  <p class="bio__support"><span class="mr-5 d-block d-sm-inline mr-md-2">Support-skills:</span><span class="ml-sm-5">Git, Npm and post-css</span><span></span></p>
-	 <div class="d-flex-column bio__full-columns">
-  <p><span class="mr-5 d-block d-sm-inline mr-md-2">Familar-With:</span><span class="ml-sm-5">PHP, Mysql and DBMS</span><span></span></p>
-	 <p><span class="mr-5 d-block d-sm-inline mr-md-2">Looking-for:</span><span class="ml-sm-5">Entry level position at any payscale</span><span></span></p>
-	 <p><span class="mr-5 d-block d-sm-inline mr-md-3">Foreword:</span><span>I have been developing for many years.
-	   recently I have been regearing towards learning industry standards like structured post-css and object-orientated javascript. 
-	    As well as industry tools such git and npm. I continue to grow my skills and hope to progress to more adavanced node.js and mongo.db. </span><span></span></p>
-   </div>     
-  </div>
+ <div id="filterToggle" class="d-block d-md-none d-lg-none position-absolute p-2 m-3 filter__toggle"><span class="mx-1">filters</span><i class="fas fa-angle-double-right opacity"></i></div>
+ <div id="certs" class="row my-3 m-lg-5">
+ <div id="filter" class="d-flex flex-column col-3 col-xl-2 certs__filter filter filter--hidden"> <div id="filters" class="d-lg-inline my-5 filter__filters">
+ <p class="d-block text-center">Filters</p>
+ <div class="list-group mb-2">
+ <p class="d-block text-center">Language</p>
+  <a href="#" class="list-group-item text-center">Html5</a>
+  <a href="#" class="list-group-item text-center">CSS3</a>
+  <a href="#" class="list-group-item text-center">JavaScript</a>
+  <a href="#" class="list-group-item text-center">Python</a>
+</div>
+<div class="list-group">
+ <p class="d-block text-center">Frameworks<br>Tools</p>
+  <a href="#" class="list-group-item text-center">BootStrap</a>
+  <a href="#" class="list-group-item text-center">Node.js</a>
+  <a href="#" class="list-group-item text-center">Mongo.db</a>
+   <a href="#" class="list-group-item text-center">Meteor.js</a>
+  <a href="#" class="list-group-item text-center">Express</a>
+</div>
  </div>
- <div id="certs" class="certs pb-5">
-  <h1 id="certsTitle" class="text-white text-center mb-5">Certificates</h1>
-  <div id="certsContainer" class="d-flex justify-content-center pb-5">
-  </div>
-  <p class="d-flex d-md-none mx-auto py-3 justify-content-center align-items-center gallery__swipe"><i class="fas fa-caret-down left"></i><span class="mx-2" >Swipe me</span><i  class="fas fa-caret-down right"></i></p>
-  <div class="row d-none d-md-block mx-auto text-center gallery__thumbs-container">
-
-  </div>
-  </div>
- <div id="projects" class="projects">
-  <h1 id="projectsTitle" class="text-center mb-5">Projects</h1>
-  <div id="projectsContainer" class="d-flex flex-wrap justify-content-center pb-5">
-  <a href="/projects/type=solo" class="projects__card projects__card--main position-relative text-white mx-3 mb-4">
-  <picture>
-  <source srcset="/assets/images/1stin-fashion-md.webp" media="(min-width: 2000px)">
-  <img src="assets/images/1stin-fashion-sm.webp" class="card-img rounded" alt="1stinfashion solo projects">
-  </picture>
-  <div class="position-absolute projects__overlay">
-  <p class="position-relative d-block mx-auto text-center"><i>Solo<br>
-   projects</i></p>
-    <span class="sr-only">link to solo projects</span>
-  </div>
-</a>
-<a href="/projects/type=solo" class="projects__card position-relative text-white mx-3 mb-4">
- <picture>
-  <source srcset="assets/images/clear-view-md.webp" media="(min-width: 2000px)">
-  <img src="assets/images/clear-view-sm.webp" class="card-img rounded" alt="courses projects and code alongs">
- </picture>
-  <div class="position-absolute projects__overlay">
-  <p class="position-relative d-block mx-auto text-center"><i>Course<br>
-   projects</i></p>
-    <span class="sr-only">link to Course projects</span>
-  </div>
-</a>
-<a href="/projects/type=solo" class="projects__card position-relative text-white mx-3 mr-2 mb-4">
- <picture>
-  <source srcset="assets/images/old-portfolio-md.webp" media="(min-width: 2000px)">
-  <img src="assets/images/old-portfolio-sm.webp" class="card-img rounded" alt="smaller Projects or collabrative projects">
- </picture>
-  <div class="position-absolute projects__overlay">
-  <p class="position-relative d-block mx-auto text-center"><i>Side<br>
-   projects</i></p>
-    <span class="sr-only">link to side projects</span>
-  </div>
-</a>
-  </div>
  </div>
+ <div id="certsPane" class="d-flex col-12 col-md-9 col-xl-10 flex-wrap justify-content-center contentpane">
+ <h1 class="d-block col-12 text-center mb-5 contentpane__title">Certificates</h1>
+ </div>
+ </div>
+  
  </main>
  <footer>
   <nav class="navbar navbar-dark footer vw-100">
@@ -132,7 +86,7 @@
         <a class="nav-link mr-2 mx-md-3" href="/side-projects">Side Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-2 mx-md-3" href="/certificates">certificates</a>
+        <a class="nav-link mr-2 mx-md-3" href="certs.html">certificates</a>
       </li>
     </ul>
     <ul class="navbar-nav position-relative footer__misc">

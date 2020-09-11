@@ -22,11 +22,27 @@ font-size: 3rem;
  @mixin atMedium {
   width: 80%;
   height: auto;
+ }
+  &--cert{
+  line-height: 1;
+  
+ .projects__overlay p {
+    font-size: 3rem;
+}
+ 
+ @mixin atXXLarge {
+  
+  .projects__overlay p {
+    font-size: 4.3rem;
+}
   
  }
  
+}
+  
  
 }
+ 
 
 
 
