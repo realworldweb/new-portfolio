@@ -5,6 +5,7 @@ class Gallery{
        this.swipeArea = document.querySelector(".gallery__swipe")//swipe event for smaller screens
        this.mainImg = document.querySelector(".gallery__main-pic")//image to change sm
        this.mdImg = document.querySelector("#medium")//image to change medium
+       this.lgImg = document.querySelector("#large")//image to change medium
        this.thumbs = document.querySelector(".gallery__thumbs-container")//area to load thumbs
        //array of thumbs
        this.imgArray = certsList.slice(certsList.length-6).map(object => {
@@ -112,6 +113,7 @@ class Gallery{
     this.activeThumb = this.activeThumb.parentNode.nextSibling.childNodes[3]
     console.log(this.activeThumb)
     this.activeThumb.classList.add('gallery__thumb--active')
+    this.lgImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].large.url}`
     this.mdImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url}`
     this.mainImg.src =`/assets/images/${this.imgArray[this.currentImage][0].small.url}` 
     this.mainImg.alt = this.imgArray[this.currentImage][0].alt;
@@ -126,7 +128,19 @@ class Gallery{
   if(e.target.name.includes('gallery')){//avoid misclicks on other elements
   const src = e.target.src.split("/")// get the full source of image and split to get relative path
   const srcArray = src[src.length-1].split('-')//
-  let md = srcArray.map( (word) => { // create link for large image
+  let lg = srcArray.map( (word) => { // create link for large image
+   let mappedArray = []
+   if(word.includes('.webp')){
+    mappedArray.push('lg.webp')
+   }
+   else{
+    mappedArray.push(word)
+   }
+   
+   return mappedArray
+  })
+  const lgSrc = lg.join('-')
+  let md = srcArray.map( (word) => { // create link for medium image
    let mappedArray = []
    if(word.includes('.webp')){
     mappedArray.push('md.webp')
@@ -138,7 +152,7 @@ class Gallery{
    return mappedArray
   })
   const mdSrc = md.join('-')
-   let sm = srcArray.map( (word) => { // create link for large image
+   let sm = srcArray.map( (word) => { // create link for small image
    let mappedArray = []
    if(word.includes('.webp')){
     mappedArray.push('sm.webp')
@@ -150,6 +164,7 @@ class Gallery{
    return mappedArray
   })
   const smSrc = sm.join('-')
+  this.lgImg.srcset = `/assets/images/${lgSrc}`
   this.mdImg.srcset = `/assets/images/${mdSrc}`
   this.mainImg.src = `/assets/images/${smSrc}`
   this.mainImg.alt = e.target.alt
