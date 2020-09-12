@@ -8,6 +8,11 @@
    font-size: 4rem;
   }
   
+ &__link{
   
+  font-size: 2rem;
+  color: $mainCream;
+  
+ }
   
  }

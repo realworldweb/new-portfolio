@@ -7,12 +7,13 @@ class Gallery{
        this.mdImg = document.querySelector("#medium")//image to change medium
        this.thumbs = document.querySelector(".gallery__thumbs-container")//area to load thumbs
        //array of thumbs
-       this.imgArray = certsList.map(object => {
+       this.imgArray = certsList.slice(certsList.length-6).map(object => {
         const mappedArray =[];
         mappedArray.push(object.certificate)
         
         return mappedArray;
        })
+       console.log(this.imgArray)
        this.currentImage = 0
        this.activeThumb
        this.touched = 0
@@ -149,7 +150,6 @@ class Gallery{
    return mappedArray
   })
   const smSrc = sm.join('-')
-  this.lgImg.srcset = `/assets/images/${lgSrc}`
   this.mdImg.srcset = `/assets/images/${mdSrc}`
   this.mainImg.src = `/assets/images/${smSrc}`
   this.mainImg.alt = e.target.alt

@@ -1,14 +1,54 @@
 class Projects{
  constructor(projectsList){
   this.projectsPane = document.getElementById('projectsPane')
-  this.projectThumbs = projectsList.map(project => {
+  this.projects = projectsList
+  this.locationString = window.location.href
+  this.queryString = this.locationString.split('?')
+  if(this.queryString.length > 1){//length should be two location string and query
+   this.queryUrl = this.queryString[1].split('=')
+   this.queryArray = this.queryUrl[1].split('%20')
+   this.query = this.queryArray.join(' ')
+   
+   
+  }else{//length less than two no query given cotinue as normal
+   this.query = 0
+  }
+  this.prepareQuery()
+  this.loadProjects()
+ }
+ 
+ 
+prepareQuery(){
+ 
+  
+  if(this.query.length > 0){//catch query
+   console.log(this.query)
+  this.projectThumbs = this.projects.filter(project => {
+   return project[this.queryUrl[0]].includes(this.query)
+  
+   
+  }).map(project => {
    const mappedArray = []
    mappedArray.push({"name": project.name , "img": project.img})
    return mappedArray;
   })
-  this.loadProjects()
- }
+  
  
+  
+ }
+ else{//no query proceed
+  
+  this.projectThumbs = this.projects.map(project => {
+   const mappedArray = []
+   mappedArray.push({"name": project.name , "img": project.img})
+   return mappedArray;
+  })
+  
+ }
+  
+ 
+ 
+}
  
 loadProjects(){
    
