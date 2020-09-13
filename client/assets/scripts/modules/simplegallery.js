@@ -4,7 +4,7 @@ class Gallery{
        this.eventArea = document.querySelector(".gallery")//galley event section
        this.swipeArea = document.querySelector(".gallery__swipe")//swipe event for smaller screens
        this.mainImg = document.querySelector(".gallery__main-pic")//image to change sm
-       this.mdImg = document.querySelector("#medium")//image to change medium
+       this.mdImg = document.querySelectorAll("#medium")//image to change medium
        this.lgImg = document.querySelector("#large")//image to change medium
        this.thumbs = document.querySelector(".gallery__thumbs-container")//area to load thumbs
        //array of thumbs
