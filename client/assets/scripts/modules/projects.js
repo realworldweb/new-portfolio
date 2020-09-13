@@ -22,7 +22,6 @@ prepareQuery(){
  
   
   if(this.query.length > 0){//catch query
-   console.log(this.query)
   this.projectThumbs = this.projects.filter(project => {
    return project[this.queryUrl[0]].includes(this.query)
   
@@ -55,7 +54,7 @@ loadProjects(){
  
     for(const project of this.projectThumbs){//add default thumb selection
     
-     this.projectsPane.innerHTML +=`<a href="/projects/name=${project[0].name}" class="projects__card position-relative text-white mx-3 mr-2 mb-4">
+     this.projectsPane.innerHTML +=`<a href="project.html?name=${project[0].name}" class="projects__card position-relative text-white mx-3 mr-2 mb-4">
  <picture>
   <source sizes="1000px" srcset="assets/images/${project[0].img.medium.url} 1200w" media="(min-width: 2200px)">
   <source sizes="700px" srcset="assets/images/${project[0].img.medium.url} 800w" media="(min-width: 1800px)">

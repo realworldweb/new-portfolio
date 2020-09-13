@@ -7,6 +7,7 @@ import Gallery from './modules/simplegallery.js';
 import Projects from './modules/projects.js'
 import Certs from './modules/certs.js'
 import Filter from './modules/filter.js'
+import Project from './modules/project.js'
 
 const filterContainer = document.querySelector('.filter')
 
@@ -85,6 +86,17 @@ const certsInfo = await loadCerts()
 
  return new Certs(certsInfo)}
  certs();
+}
+
+const projectDetails = document.getElementById('projectDetails')
+
+if(projectDetails !== null){
+
+const project = async () =>  {
+const projectsInfo = await loadProjects()
+
+ return new Project(projectsInfo)}
+ project();
 }
 
 
