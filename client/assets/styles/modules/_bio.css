@@ -74,7 +74,7 @@
 
 &__full-columns{
 @mixin atMedium{
-transform: translateX(-7%) translateY(-50%);
+transform: translateX(-7%) translateY(-40%);
 }
 }
 
