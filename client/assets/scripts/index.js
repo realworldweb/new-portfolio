@@ -8,6 +8,7 @@ import Projects from './modules/projects.js'
 import Certs from './modules/certs.js'
 import Filter from './modules/filter.js'
 import Project from './modules/project.js'
+import Cert from './modules/cert.js'
 
 const filterContainer = document.querySelector('.filter')
 
@@ -99,6 +100,17 @@ const projectsInfo = await loadProjects()
  project();
 }
 
+
+const certDetails = document.getElementById('certDetails')
+
+if(certDetails !== null){
+
+const cert = async () =>  {
+const certsInfo = await loadCerts()
+
+ return new Cert(certsInfo)}
+ cert();
+}
 
 
 

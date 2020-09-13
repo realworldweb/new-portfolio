@@ -54,7 +54,7 @@ loadCerts(){
  
     for(const cert of this.certsThumbs){//add default thumb selection
     
-     this.certsPane.innerHTML +=`<a href="/certs/name=${cert[0].name}" class="projects__card projects__card--cert position-relative text-white mx-3 mr-2 mb-4">
+     this.certsPane.innerHTML +=`<a href="cert.html?name=${cert[0].name}" class="projects__card projects__card--cert position-relative text-white mx-3 mr-2 mb-4">
  <picture>
   <source sizes="1000px" srcset="assets/images/${cert[0].img.large.url} 1200w" media="(min-width: 2200px)">
   <source sizes="700px" srcset="assets/images/${cert[0].img.medium.url} 800w" media="(min-width: 1800px)">
