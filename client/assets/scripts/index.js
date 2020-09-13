@@ -56,8 +56,8 @@ certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-
 <i id="control-left" class="fas fa-caret-down left"></i>
 <picture class="">
 <source id="large" sizes="1000px" srcset="assets/images/${certsList[certsList.length-6].certificate.large.url} 1100w" media="(min-width: 1200px)">
-<source id="medium"sizes="700px" srcset="assets/images/${certsList[certsList.length-6].certificate.medium.url} 580w" media="(min-width: 1000px)">
-<source id="mediumxl"sizes="700px" srcset="assets/images/${certsList[certsList.length-6].certificate.medium.url} 780w" media="(min-width: 700px)">
+<source id="medium" class="medium" sizes="700px" srcset="assets/images/${certsList[certsList.length-6].certificate.medium.url} 580w" media="(min-width: 1000px)">
+<source id="mediumxl" class="medium"  sizes="700px" srcset="assets/images/${certsList[certsList.length-6].certificate.medium.url} 780w" media="(min-width: 700px)">
 <img sizes="500px" srcset="assets/images/${certsList[certsList.length-6].certificate.small.url} 600w" src="assets/images/${certsList[certsList.length-6].certificate.small.url}" alt="${certsList[certsList.length-6].certificate.alt}" class="d-block mx-auto text-center gallery__main-pic">
 </picture>
 <i id="control-right" class="fas fa-caret-down right"></i>

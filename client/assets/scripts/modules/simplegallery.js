@@ -4,8 +4,8 @@ class Gallery{
        this.eventArea = document.querySelector(".gallery")//galley event section
        this.swipeArea = document.querySelector(".gallery__swipe")//swipe event for smaller screens
        this.mainImg = document.querySelector(".gallery__main-pic")//image to change sm
-       this.mdImg = document.querySelectorAll("#medium")//image to change medium
-       this.lgImg = document.querySelector("#large")//image to change medium
+       this.mdImg = document.querySelectorAll(".medium")//image to change medium
+       this.lgImg = document.querySelector("#large")//image to change large
        this.thumbs = document.querySelector(".gallery__thumbs-container")//area to load thumbs
        //array of thumbs
        this.imgArray = certsList.slice(certsList.length-6).map(object => {
@@ -14,7 +14,6 @@ class Gallery{
         
         return mappedArray;
        })
-       console.log(this.imgArray)
        this.currentImage = 0
        this.activeThumb
        this.touched = 0
@@ -102,8 +101,10 @@ class Gallery{
     console.log(this.activeThumb);
     this.activeThumb.classList.add('gallery__thumb--active')
   }
- this.lgImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].large.url}`
- this.mdImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url}`
+ this.lgImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].large.url} 1100w`
+ this.mdImg[0].srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url} 580w`
+ this.mdImg[1].srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url} 780w`
+ this.mainImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].small.url} 600w`
  this.mainImg.src = `/assets/images/${this.imgArray[this.currentImage][0].small.url}`
  this.mainImg.alt = this.imgArray[this.currentImage][0].alt
   }
@@ -114,10 +115,12 @@ class Gallery{
     this.activeThumb = this.activeThumb.parentNode.nextSibling.childNodes[3]
     console.log(this.activeThumb)
     this.activeThumb.classList.add('gallery__thumb--active')
-    this.lgImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].large.url}`
-    this.mdImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url}`
-    this.mainImg.src =`/assets/images/${this.imgArray[this.currentImage][0].small.url}` 
-    this.mainImg.alt = this.imgArray[this.currentImage][0].alt;
+    this.lgImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].large.url} 1100w`
+ this.mdImg[0].srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url} 580w`
+ this.mdImg[1].srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url} 780w`
+ this.mainImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].small.url} 600w`
+ this.mainImg.src = `/assets/images/${this.imgArray[this.currentImage][0].small.url}`
+ this.mainImg.alt = this.imgArray[this.currentImage][0].alt
   
   }
 		
@@ -165,8 +168,10 @@ class Gallery{
    return mappedArray
   })
   const smSrc = sm.join('-')
-  this.lgImg.srcset = `/assets/images/${lgSrc}`
-  this.mdImg.srcset = `/assets/images/${mdSrc}`
+  this.lgImg.srcset = `/assets/images/${lgSrc} 1100w`
+  this.mdImg[0].srcset = `/assets/images/${mdSrc} 580w`
+  this.mdImg[1].srcset = `/assets/images/${mdSrc} 780w`
+  this.mainImg.srcset = `/assets/images/${smSrc} 600w`
   this.mainImg.src = `/assets/images/${smSrc}`
   this.mainImg.alt = e.target.alt
   this.currentImage = parseInt(e.target.id)//update current image
