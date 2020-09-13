@@ -18,6 +18,12 @@ body{
  box-sizing: border-box;
 }
 
+main{
+ min-height: 70vh;
+ 
+ 
+}
+
 .display{
  
  display: inline;

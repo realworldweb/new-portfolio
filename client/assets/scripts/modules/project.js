@@ -12,8 +12,8 @@ class Project{
    
   }else{//length less than two no query given cotinue as normal
   
-   this.projectContainer.innerHTML = `<p class="d-flex justify-content-center productdetails__error mb-5">Please select a valid project</p>
-   <a class="btn d-block w-50 mx-auto productdetails__error-link mt-5">Return to projects</a>`
+   this.projectContainer.innerHTML = `<p class="d-flex justify-content-center projectdetails__error mb-5">Please select a valid project</p>
+   <a type="button" href="projects.html" class="btn d-block w-30 m-5 mx-auto projectdetails__error-link">Return to projects</a>`
    
    return
   }
@@ -29,7 +29,38 @@ class Project{
 
 setProject(){
 
+const project = this.projectList.filter(project => {return project[this.queryUrl[0]] === this.query})
+const projectTags = project[0].frontTools.concat(project[0].backTools, project[0].devTools);
 
+this.projectContainer.innerHTML = `
+<div class="d-block position-relative mx-auto bg-white pb-3 projectdetails__main">
+<picture>
+<source sizes="1000px" srcset="assets/images/${project[0].img.large.url} 1200w" media="(min-width: 1800px)">
+<source sizes="700px" srcset="assets/images/${project[0].img.medium.url} 800w" media="(min-width: 1000px)">
+<img sizes="500px" srcset="assets/images/${project[0].img.small.url} 550w" src="assets/images/${project[0].img.small.url}" alt="${project[0].img.alt}" class="d-block mx-auto projectdetails__main-pic">
+</picture>
+<h1 class="d-block text-center projectdetails__title">${project[0].name}</h1>
+<a type="button" href="${project[0].gitHub}" class="btn d-block mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github-square mx-2" alt="github"></i>GitHub Source<span class="sr-only">Link to github source</span></a>
+<a type="button" href="${project[0].live}" class="btn d-block mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i class="fas fa-link mx-2"></i>Hosted Example<span class="sr-only">Link to live example</span></a>
+<p class="d-block mx-auto mt-3 text-center projectdetails__desc">${project[0].desc}</p>
+</div>
+<div class="d-block position-relative projectdetails__tools pb-3">
+<h2 class="d-block text-center">Languages & tools</h2>
+<ul id="usedlist" class="row mt-5 text-center list-unstyled projectdetails__list">
+</ul>
+</div>
+<div class="d-block position-relative projectdetails__foreword">
+<h3 class="d-block text-center mt-3">Foreword</h3>
+<p class="d-block w-80 mx-auto text-center">${project[0].foreword}</p>
+</div>
+   `
+const tagslist = document.getElementById('usedlist')
+for(const tag of projectTags){
+ 
+tagslist.innerHTML +=`<li class="col-6 list-item">${tag}</li>`
+ 
+ 
+}
 
 }
 
