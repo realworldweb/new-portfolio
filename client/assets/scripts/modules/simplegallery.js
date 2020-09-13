@@ -102,6 +102,7 @@ class Gallery{
     console.log(this.activeThumb);
     this.activeThumb.classList.add('gallery__thumb--active')
   }
+ this.lgImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].large.url}`
  this.mdImg.srcset = `/assets/images/${this.imgArray[this.currentImage][0].medium.url}`
  this.mainImg.src = `/assets/images/${this.imgArray[this.currentImage][0].small.url}`
  this.mainImg.alt = this.imgArray[this.currentImage][0].alt
