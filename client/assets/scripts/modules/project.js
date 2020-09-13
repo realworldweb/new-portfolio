@@ -37,21 +37,24 @@ this.projectContainer.innerHTML = `
 <picture>
 <source sizes="1000px" srcset="assets/images/${project[0].img.large.url} 1200w" media="(min-width: 1800px)">
 <source sizes="700px" srcset="assets/images/${project[0].img.medium.url} 800w" media="(min-width: 1000px)">
-<img sizes="500px" srcset="assets/images/${project[0].img.small.url} 550w" src="assets/images/${project[0].img.small.url}" alt="${project[0].img.alt}" class="d-block mx-auto projectdetails__main-pic">
+<img sizes="500px" srcset="assets/images/${project[0].img.small.url} 550w" src="assets/images/${project[0].img.small.url}" alt="${project[0].img.alt}" class="d-block mx-auto float-lg-left projectdetails__main-pic">
 </picture>
 <h1 class="d-block text-center projectdetails__title">${project[0].name}</h1>
-<a type="button" href="${project[0].gitHub}" class="btn d-block mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github-square mx-2" alt="github"></i>GitHub Source<span class="sr-only">Link to github source</span></a>
-<a type="button" href="${project[0].live}" class="btn d-block mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i class="fas fa-link mx-2"></i>Hosted Example<span class="sr-only">Link to live example</span></a>
+
+<a type="button" href="${project[0].gitHub}" class="btn  text-center d-block d-lg-inline position-relative mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github-square mx-2" alt="github"></i>GitHub Source<span class="sr-only">Link to github source</span></a><br>
+<a type="button" href="${project[0].live}" class="btn text-center d-lg-inline d-block position-relative mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i class="fas fa-link mx-2"></i>Hosted Example</a>
+
+<div class="row justify-content-center"><span class="col-12 text-center projectdetails__type">Type:&nbsp;&nbsp;${project[0].type}</span></div>
 <p class="d-block mx-auto mt-3 text-center projectdetails__desc">${project[0].desc}</p>
 </div>
 <div class="d-block position-relative projectdetails__tools pb-3">
 <h2 class="d-block text-center">Languages & tools</h2>
-<ul id="usedlist" class="row mt-5 text-center list-unstyled projectdetails__list">
+<ul id="usedlist" class="row mt-5 mx-auto text-center list-unstyled projectdetails__list">
 </ul>
 </div>
-<div class="d-block position-relative projectdetails__foreword">
-<h3 class="d-block text-center mt-3">Foreword</h3>
-<p class="d-block w-80 mx-auto text-center">${project[0].foreword}</p>
+<div class="d-block mx-auto position-relative projectdetails__foreword">
+<h3 class="col-12 text-center mt-3">Foreword</h3>
+<p class="d-block mx-auto text-center">${project[0].foreword}</p>
 </div>
    `
 const tagslist = document.getElementById('usedlist')

@@ -18,11 +18,17 @@ margin-top: 170px;
 
 &__main{
  width: 90vw;
+ max-width: 1400px;
  z-index: 4;
  box-shadow: 1px 1px rgba(0,0,0,.4),3px 3px grey;
   
  @mixin atMedium{
-width: 60vw;
+width: 70vw;
+
+}
+
+ @mixin atLarge{
+width: 90vw;
 
 }
  
@@ -37,6 +43,12 @@ width: 60vw;
  transform: translateY(-30%);
  box-shadow: 1px 1px rgba(0,0,0,.4),3px 3px grey;
  
+ @mixin atLarge{
+
+  transform: translateY(0%);
+
+}
+ 
 }
 
 &__title{
@@ -44,6 +56,10 @@ width: 60vw;
  margin-top: -10%;
  font-weight: 900;
  
+ @mixin atMedium{
+  font-size: 3.5rem;
+
+ }
  
  
 }
@@ -55,8 +71,39 @@ width: 60vw;
  font-size: 1.2rem;
  box-shadow: .5px .5px rgba(0,0,0,.4),1.5px 1.5px grey;
  
+ 
+ 
+  @mixin atMedium{
+  font-size: 1.6rem;
+  max-width: 60%;
+ }
+ 
+ @mixin atLarge{
+  max-width: 35%;
+  font-size: 1.3rem;
+ left : 12%;
+ 
+ 
+ }
+
+
+ 
  svg{
   font-size: 2rem;
+  @mixin atMedium{
+  font-size: 2.3rem;
+ }
+  
+  
+ }
+ 
+}
+
+&__type{
+ font-size: 1.2rem;
+   font-weight: 500;
+    @mixin atMedium{
+  font-size: 1.6rem;
  }
  
 }
@@ -65,7 +112,9 @@ width: 60vw;
 max-width: 90%;
 font-weight: 500;
 font-size: 1.2rem;
- 
+ @mixin atMedium{
+  font-size: 1.6rem;
+ }
  
 }
 
@@ -84,11 +133,17 @@ font-size: 1.2rem;
 
 &__list{
  font-size: 1.2rem;
+ max-width: 1400px;
+ 
+ @mixin atMedium{
+  font-size: 2rem;
+ }
  
 }
 
 &__foreword{
  color: $mainNavy;
+ max-width: 1400px;
  
  h3{
   font-size: 2rem;
@@ -98,6 +153,10 @@ font-size: 1.2rem;
   width: 80%;
   font-size: 1.2rem;
    font-weight: 500;
+   @mixin atMedium{
+  font-size: 1.6rem;
+ }
+   
  }
  
 }
