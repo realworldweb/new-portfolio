@@ -28,7 +28,7 @@ class RunAfterCompile {
 		
 	}
  
- apply(complier) {
+ applydocs(complier) {
 		
 		complier.hooks.done.tap('copy documents', function() {
 			
