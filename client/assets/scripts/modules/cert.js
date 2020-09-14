@@ -44,14 +44,14 @@ this.certContainer.innerHTML = `
 </div>
 <div class="d-block position-relative certdetails__info pb-3">
 <h2 class="d-block text-center">Course-Info</h2>
-<div class="row mt-2">
-<span class="col-6 text-center">AwardedBy:&nbsp;${cert[0].awardedBy}</span>
-<span class="col-6 text-center">GainedOn:&nbsp;${cert[0].gained}</span>
+<div class="row mt-2 certdetails__awarded">
+<span class="col-sm-6 text-center">AwardBy:&nbsp;${cert[0].awardedBy}</span>
+<span class="col-sm-6 text-center">GainedOn:&nbsp;${cert[0].gained}</span>
 </div>
-<a type="button" href="${cert[0].link}" class="btn text-center my-5 d-lg-inline d-block position-relative mx-auto mb-2 certdetails__button" rel="noopener" target="_blank"><i class="fas fa-link mx-2"></i>Online Certificate</a>
+<a type="button" href="${cert[0].link}" class="btn text-center my-5 d-block position-relative mx-auto mb-2 certdetails__button" rel="noopener" target="_blank"><i class="fas fa-link mx-2"></i>Online Certificate</a>
 
 </div>
-<div class="certdetails__modules">
+<div class="d-block mx-auto certdetails__modules">
 <h3 class="d-block position-relative text-center">Modules</h3>
 <ul class="list-unstyled d-block justify-content-center certdetails__modules-list">
 </ul>
