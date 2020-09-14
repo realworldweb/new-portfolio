@@ -80,17 +80,18 @@
 </div>
 <div class="d-flex flex-column align-items-center contact__direct-mail">
 <h2 class="text-center my-3">Direct-Mail</h2>
+<p id="errorMsg" class="text-danger border-danger display display--none"></p>
 <form id="contact-us" class="row align-items-between contact-us__form">
 <label class="col-12 text-center my-2" for="nameinput">Name:</label>
-<input type="text" id="nameinput" class="col-8 mx-auto my-2"  name="name" placeholder="Please enter name" required>
+<input type="text" id="nameinput" class="col-8 mx-auto my-2 contact__input"  name="name" placeholder="Please enter name" required>
 <label class="col-12 text-center" for="phoneinput">Phone number:</label>
-<input type="number"  id="phoneinput" name="phone" placeholder="Please enter phone number" class="col-8 my-2 mx-auto">
+<input type="number"  id="phoneinput" name="phone" placeholder="Please enter phone number" class="col-8 my-2 mx-auto contact__input">
 <label class="col-12 my-2 text-center" for="emailinput">Email:</label>
-<input  type="text" id="emailinput" name="email" placeholder="Please enter email address" class="col-8 my-2 mx-auto">
+<input  type="text" id="emailinput" name="email" placeholder="Please enter email address" class="col-8 my-2 mx-auto contact__input">
 <label class="col-12 my-2 text-center" for="subjectinput">Subject:</label>
-<input type="text" id="subjectinput"  name="subject" placeholder="Please enter reason for contact" class="col-10 my-2 mx-auto" required>
+<input type="text" id="subjectinput"  name="subject" placeholder="Please enter reason for contact" class="col-10 my-2 mx-auto contact__input" required>
 <label class="col-12 my-2 text-center" for="bodyinput">Body:</label>
-<textarea id="bodyinput" name="body" placeholder="write what you would like to say here..." class="col-8 mx-auto mt-2 d-block mb-3" required>
+<textarea id="bodyinput" name="body" placeholder="write what you would like to say here..." class="col-8 mx-auto mt-2 d-block mb-3 contact__input" required>
 </textarea>
 <button type="submit" class="btn col-12 d-inline-block mx-auto contact__submit">Send Msg</button>
 

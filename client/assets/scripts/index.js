@@ -9,6 +9,7 @@ import Certs from './modules/certs.js'
 import Filter from './modules/filter.js'
 import Project from './modules/project.js'
 import Cert from './modules/cert.js'
+import ContactUs from './modules/form.js'
 
 const filterContainer = document.querySelector('.filter')
 
@@ -110,6 +111,13 @@ const certsInfo = await loadCerts()
 
  return new Cert(certsInfo)}
  cert();
+}
+
+const contactDetails = document.getElementById('contactDetails')
+
+if(contactDetails !== null){
+
+const contact  = new ContactUs();
 }
 
 
