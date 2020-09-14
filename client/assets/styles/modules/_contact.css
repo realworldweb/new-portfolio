@@ -1,0 +1,54 @@
+.contact{
+margin-top: 3rem;
+color: $mainCream;
+
+&__main{
+ background-color: $mainNavy;
+ font-weight: 500;
+ font-size: 1.2rem;
+ 
+}
+
+h1{
+ 
+ font-weight: 900;
+ 
+}
+
+&__social{
+ 
+ a{
+ font-size: 2rem;
+ color: $mainCream;
+ }
+}
+
+&__direct-mail{
+ 
+ color: $mainNavy;
+ font-weight: 500;
+ font-size: 1.2rem;
+}
+
+input, textarea{
+ box-shadow: 1px 1px rgba($mainNavy,.4),3px 3px grey;
+ padding: .5rem 0 .5rem 0;
+ text-align: center;
+ 
+}
+
+button{
+ box-shadow: 1px 1px rgba($mainNavy,.4),3px 3px grey;
+ 
+}
+
+&__submit{
+ background-color: $successGreen;
+ color: #fff;
+ font-weight: 500;
+ 
+ 
+}
+
+
+}

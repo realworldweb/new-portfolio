@@ -7,7 +7,7 @@
  <meta name="keywords" content="devlopment, programming, coder, jobseeker, for hire">
  <meta name="description" content="portfolio site showcasing HTML, CSS and JavaScript">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
- <title>Portfolio Project</title>
+ <title>Portfolio Homepage</title>
 </head>
 <body id="body">
  <header>
@@ -42,7 +42,59 @@
  </nav>
  </header>
  <main id="main" class="d-block position-relative mb-5">
-  <div id="certDetails" class="d-block position-relative pb-5 certdetails" >
+<div id="contactDetails" class="d-block position-relative pb-5 contact" >
+<div class="d-block  mx-auto contact__main">
+<h1 class="text-center">Contact-us</h1>
+<div class="row">
+<p class="col-12 text-center">Name:</p>
+<p class="col-12 text-center">Paul Rooney</p>
+<p class="col-12 text-center">Email:</p>
+<p class="col-12 text-center">paulrooney60@gmail.com</p>
+<p class="col-12 text-center">Phone:</p>
+<p class="col-12 text-center">07850544269</p>
+</div>
+<div class="d-flex justify-content-center contact__social">
+<span class="d-inline-block mr-5">
+        <a class="" href="https://www.facebook.com/paulrooneyweb" rel="noopener" target="_blank">
+         <i aria-hidden="true" class="fab fa-facebook-square" alt="facebook"></i>
+         <span class="sr-only">link to Facebook</span>
+        </a>
+      </span>
+      <span class="d-inline-block mx-5">
+        <a class="" href="https://www.linkedin.com/in/paul-rooney-6760b0b5/" rel="noopener" target="_blank">
+         <i aria-hidden="true" class="fab fa-linkedin" alt="linkedin"></i>
+         <span class="sr-only">link to Linkedin</span>
+        </a>
+      </span>
+      <span class="d-inline-block mx-5">
+        <a class="" href="https://github.com/realworldweb" rel="noopener" target="_blank">
+        <i aria-hidden="true" class="fab fa-github-square" alt="github"></i>
+        <span class="sr-only">link to Github</span></a>
+      </span>
+      <span class=" d-inline-block ml-5">
+        <a class="" href="http://m.me/paulrooney60" rel="noopener" target="_blank">
+         <i aria-hidden="true" class="fab fa-facebook-messenger" alt="facebookmsg"></i>
+         <span class="sr-only">link to facebook messenger</span></a>
+      </span>
+</div>
+</div>
+<div class="d-flex flex-column align-items-center contact__direct-mail">
+<h2 class="text-center my-3">Direct-Mail</h2>
+<form id="contact-us" class="row align-items-between contact-us__form">
+<label class="col-12 text-center my-2" for="nameinput">Name:</label>
+<input id="nameinput" class="col-8 mx-auto my-2" type="text" name="name" placeholder="Please enter name" required>
+<label class="col-12 text-center" for="phoneinput">Phone number:</label>
+<input id="phoneinput" type="number" name="phone" placeholder="Please enter phone number" class="col-8 my-2 mx-auto">
+<label class="col-12 my-2 text-center" for="emailinput">Email:</label>
+<input id="emailinput" type="text" name="email" placeholder="Please enter email address" class="col-8 my-2 mx-auto">
+<label class="col-12 my-2 text-center" for="subjectinput">Subject:</label>
+<input id="subjectinput" type="text" name="subject" placeholder="Please enter reason for contact" class="col-10 my-2 mx-auto" required>
+<label class="col-12 my-2 text-center" for="bodyinput">Body:</label>
+<textarea id="bodyinput" name="body" placeholder="write what you would like to say here..." class="col-10 mx-auto mt-2 mb-3" required>
+</textarea>
+<button type="submit" class="btn d-block mx-auto contact__submit">Send Msg</button>
+
+</form>
   </div>
  </main>
  <footer>
