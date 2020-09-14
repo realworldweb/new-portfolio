@@ -67,18 +67,18 @@ compileForm(){
 	
 				
 	}else{
-		this.warning.innerHTML = 'Please check your phone or email'
+		this.error.innerHTML = 'Please check your phone or email'
 	}
 
 }
 
 sendrequest(){
 	
-	Axios.post('/server/send-email', postJson ).then(() => {
+	Axios.post('/.netlify/functions/server/send-email', postJson ).then(() => {
       this.run.remove()
       this.success()
     }).catch(() => {
-      this.warning.innerHTML = 'Sorry something went wrong please retry'
+      this.error.innerHTML = 'Sorry something went wrong please retry'
     })
 }
 	
