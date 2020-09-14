@@ -27,8 +27,11 @@ class RunAfterCompile {
 		
 		
 	}
+}
+
+class BuildDocs{
  
- applydocs(complier) {
+ apply(complier) {
 		
 		complier.hooks.done.tap('copy documents', function() {
 			
@@ -38,9 +41,11 @@ class RunAfterCompile {
 		
 		
 	}
-	
-	
+ 
+ 
 }
+ 
+
 
 let cssConfig = {
         test: /\.css$/i,
@@ -118,6 +123,7 @@ if (currentTask == "build"){
   new CleanWebpackPlugin(), 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
   new RunAfterCompile()
+   new BuildDocs()
   )
 	
 }
