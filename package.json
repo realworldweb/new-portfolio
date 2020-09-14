@@ -48,6 +48,7 @@
     "postcss-mixins": "^6.2.3",
     "postcss-nested": "^4.2.3",
     "postcss-simple-vars": "^5.0.2",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "sparkpost": "^2.1.4"
   }
 }
