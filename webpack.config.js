@@ -27,6 +27,17 @@ class RunAfterCompile {
 		
 		
 	}
+ 
+ apply(complier) {
+		
+		complier.hooks.done.tap('copy documents', function() {
+			
+			fse.copySync('./client/assets/documents', './docs/assets/documents')
+			
+		})
+		
+		
+	}
 	
 	
 }
