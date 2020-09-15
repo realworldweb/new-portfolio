@@ -80,7 +80,8 @@ async function insert (feedback){
  }
  
  async function feedbackInsert(client, feedback){// load certs and pass it to express route for processing.
- feedback.createdOn = new date();
+ const date = new Date()
+ feedback.createdOn =`${date.getMonth()}/${date.FullYear()}` 
    const feedbackList = await client.db('portfolio').collection('feedback')
    
    const data = await feedbackList.insertOne(feedback)
