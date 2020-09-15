@@ -92,8 +92,8 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
   
 });
 
-router.post('/feedback', async (req, res, event) => {
- console.log(event.body)
+router.post('/feedback', async (req, res) => {
+ console.log(req.body)
  
  res.send('success')
  
