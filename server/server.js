@@ -83,6 +83,11 @@ async function insert (feedback){
  }
  
  async function feedbackInsert(client, feedback){// load certs and pass it to express route for processing.
+ 
+ if(feedback.name === ''){
+  feedback.name = 'anon'
+ }
+ 
  const now = moment().tz('Europe/Dublin');
 
  feedback.createdOn = now.format("MMM Do YY")
