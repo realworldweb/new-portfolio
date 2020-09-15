@@ -11,6 +11,7 @@ import Project from './modules/project.js'
 import Cert from './modules/cert.js'
 import ContactUs from './modules/form.js'
 import Feedback from './modules/feedback.js'
+import GetFeedback from './modules/getfeedback.js'
 
 const filterContainer = document.querySelector('.filter')
 
@@ -20,6 +21,7 @@ let filter = new Filter()
 
 let certsList;
 let projectsList;
+let feedbackList;
 const loadProjects = async () =>{
  
 try {
@@ -80,6 +82,29 @@ return new Gallery(certsList);
  }
 }
 
+const loadFeedback = async () =>{
+ 
+try {
+  const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/feedback');
+  feedbackList = response.data;
+  const feedbackContainer = document.getElementById('feedbackContainer')
+  
+if(feedbackContainer !== null){
+ 
+ return new GetFeedback(feedbackList);
+}else{
+ 
+ return feedbackList;
+ 
+}
+
+ }catch (error){
+  
+  console.error(error);
+  
+ }
+}
+
 const certsPane = document.getElementById('certsPane')
 
 if(certsPane !== null){
@@ -129,6 +154,6 @@ const feedback  = new Feedback();
 }
 
 
-
+document.getElementById('body').addEventListener('onload', loadFeedback());
 document.getElementById('body').addEventListener('onload', loadCerts());
 document.getElementById('body').addEventListener('onload', loadProjects());
