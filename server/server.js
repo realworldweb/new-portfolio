@@ -92,13 +92,16 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
   
 });
 
+router.post('/feedback', async (req, res) => {
+ console.log(req.body.name)
+ 
+})
+
  
 
  
 
  app.use('/.netlify/functions/server', router);
- 
-
  
  module.exports = app;
  module.exports.handler = serverless(app);
