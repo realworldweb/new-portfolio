@@ -6,6 +6,8 @@ const app = express()
 
 const cors = require('cors')
 
+const moment = require("moment")
+
 const router = express.Router()
 
 const {MongoClient} = require('mongodb')
@@ -80,8 +82,9 @@ async function insert (feedback){
  }
  
  async function feedbackInsert(client, feedback){// load certs and pass it to express route for processing.
- const date = new Date()
- feedback.createdOn =`${date.getMonth()}/${date.FullYear()}` 
+ const now = moment();
+
+ feedback.createdOn = now.format("MMM Do YY")
    const feedbackList = await client.db('portfolio').collection('feedback')
    
    const data = await feedbackList.insertOne(feedback)
