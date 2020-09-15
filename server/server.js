@@ -92,10 +92,11 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
   
 });
 
-router.post('/feedback', async (e,req, res) => {
+router.post('/feedback', async (req, res, e) => {
  console.log(JSON.parse(e.body))
  
- res.end('ran insert');
+ res.body('success')
+ 
 })
 
  
