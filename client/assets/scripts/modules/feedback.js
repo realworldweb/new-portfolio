@@ -38,7 +38,7 @@ compileFeedback(){
 
 sendrequest(){
 	
-	Axios.post('https://www.realworldwebportfolio.co.uk/.netlify/functions/server/feedback', postJson ).then(() => {
+	Axios.post('/.netlify/functions/server/feedback', postJson ).then(() => {
       this.run.remove()
       this.success()
     }).catch(() => {
