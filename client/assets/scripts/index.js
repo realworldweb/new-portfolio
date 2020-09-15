@@ -10,6 +10,7 @@ import Filter from './modules/filter.js'
 import Project from './modules/project.js'
 import Cert from './modules/cert.js'
 import ContactUs from './modules/form.js'
+import Feedback from './modules/feedback.js'
 
 const filterContainer = document.querySelector('.filter')
 
@@ -118,6 +119,13 @@ const contactDetails = document.getElementById('contactDetails')
 if(contactDetails !== null){
 
 const contact  = new ContactUs();
+}
+
+const feedbackContainer = document.getElementById('feedbackContainer')
+
+if(feedbackContainer !== null){
+
+const feedback  = new Feedback();
 }
 
 
