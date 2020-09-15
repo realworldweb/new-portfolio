@@ -93,7 +93,7 @@ router.get('/certs/:id', async (req, res) => {//return all certs from api
 });
 
 router.post('/feedback', async (req, res, event) => {
- console.log(JSON.parse(event.body))
+ console.log(event.body)
  
  res.send('success')
  
