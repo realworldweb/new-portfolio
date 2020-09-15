@@ -18,7 +18,7 @@ loadFeedback(){
     for(const feedback of this.feedback){//add default thumb selection
       console.log(feedback)
      this.feedbackStage.innerHTML +=`<p>Topic:&nbsp;${feedback.about}</p>
-     <div id="content">
+     <div>
      <p>Feedback:<br>${feedback.body}</p>
      <p><i>Name:$nbsp;${feedback.name}</i></p>
      <p><i>Created on:$nbsp;${feedback.createdOn}</i></p>
