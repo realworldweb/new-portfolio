@@ -7,6 +7,7 @@ const app = express()
 const cors = require('cors')
 
 const moment = require("moment")
+const momentTimezone = require("moment-timezone")
 
 const router = express.Router()
 
@@ -82,7 +83,7 @@ async function insert (feedback){
  }
  
  async function feedbackInsert(client, feedback){// load certs and pass it to express route for processing.
- const now = moment();
+ const now = moment().tz('Europe/Dublin');
 
  feedback.createdOn = now.format("MMM Do YY")
    const feedbackList = await client.db('portfolio').collection('feedback')
