@@ -21,7 +21,7 @@ loadFeedback(){
      <div id="content">
      <p>${feedback.body}</p>
      <p>${feedback.name}</p>
-     <p>date</p>
+     <p>${feedback.createdOn}</p>
      </div>`
     
     
