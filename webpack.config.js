@@ -36,6 +36,8 @@ class BuildDocs{
 		complier.hooks.done.tap('copy documents', function() {
 			
 			fse.copySync('./client/assets/documents', './docs/assets/documents')
+   fse.copySync('./client/robots.txt', '.docs/robots.txt')
+   fse.copySync('./client/sitemap.xml', '.docs/sitemap.xml'),
 			
 		})
 		
