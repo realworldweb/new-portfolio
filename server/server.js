@@ -84,7 +84,7 @@ async function insert (feedback){
  
  async function feedbackInsert(client, feedback){// load certs and pass it to express route for processing.
  
- if(feedback.name === ''){
+ if(feedback.name === ""){
   feedback.name = 'anon'
  }
  
