@@ -21,16 +21,16 @@ async function main (get){
  
  try{
  await client.connect()
- if( get === projects){
+ if( get === 'projects'){
  await projectsMount(client);//mount projects so we can run various requests
  return
  }
-  if( get === certs){
+  if( get === 'certs'){
  await certsMount(client);//mount certs so we can run various requests
  return
   }
   
-  if( get === feedback){
+  if( get === 'feedback'){
    await feedbackMount(client);
    return
   }
