@@ -64,7 +64,7 @@ async function insert (feedback){
  console.log('inserted')
    feedbackList = await client.db('portfolio').collection('feedback')
    
-   const data = await feedbackList.save(feedback)
+   const data = await feedbackList.insertOne(feedback)
  }
 
  
