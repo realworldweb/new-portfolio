@@ -9,15 +9,12 @@ color: $mainCream;
  
  
  @mixin atLarge{
-  max-width: 30vw;
-  min-height: 80vw;
+  max-width: 40vw;
   font-size: 1.5rem;
-  padding-top: 20%;
  }
  
  @mixin atXXLarge{
-  
-  padding-top: 15%;
+  max-width: 28vw;
  }
  
  
@@ -30,6 +27,19 @@ h1{
    font-size: 4rem;
    
  }
+}
+
+
+
+
+&__link{
+  font-size: 2rem;
+  color: $mainCream;
+  &:hover{
+   
+   color: #fff;
+  }
+ 
 }
 
 &__leave-feedback{
