@@ -17,6 +17,11 @@ class GetFeedback{
 loadFeedback(){
   console.log(this.feedbacklimited)
   if(this.feedbacklimited !== null){
+   if(this.feedbackLimit.length < 0){
+    this.feedbacklimited.innerHTML +=`
+     <p>Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
+    return
+   }
     for(const feedback of this.feedbackLimit){//add default thumb selection
  
      this.feedbacklimited.innerHTML +=`
@@ -34,7 +39,11 @@ loadFeedback(){
   }
   
   if(this.feedbackStage !== null){
-   console.log('ran fs')
+   if(this.feedback.length < 0){
+    this.feedback.innerHTML +=`
+     <p>Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
+    return
+   }
     for(const feedback of this.feedback){//add default thumb selection
  
      this.feedbackStage.innerHTML +=`
