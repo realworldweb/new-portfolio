@@ -39,6 +39,7 @@ class BuildDocs{
 			fse.copySync('./client/assets/documents', './docs/assets/documents')
    fse.copySync('./client/robots.txt', './docs/robots.txt')
    fse.copySync('./client/sitemap.xml', './docs/sitemap.xml')
+   fse.copySync('./client/favicon.ico', './docs/favicon.ico')
 			
 		})
 		
