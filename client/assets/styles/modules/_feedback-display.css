@@ -2,6 +2,22 @@
 border: $mainCream 2px solid;
 border-radius: 25px;
 box-shadow: 3px 3px rgba($mainCream,.4), 6px 6px grey;
+max-width: 80%;
+
+@mixin atSmall{
+max-width: 40%;
+}
+
+@mixin atLarge{
+ max-width: 40%;
+ 
+}
+
+@mixin atbootstrapXL{
+ max-width: 25%;
+ 
+}
+
 
 
 &--limited{

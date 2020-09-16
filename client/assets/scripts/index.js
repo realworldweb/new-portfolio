@@ -89,7 +89,7 @@ try {
   feedbackList = response.data;
   const feedbackContainer = document.getElementById('feedbackContainer')
   
-if(feedbackContainer !== null){
+if(feedbackContainer !== null || feedbackStage !== null ){
  
  return new GetFeedback(feedbackList);
 }else{
