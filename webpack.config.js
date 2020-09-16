@@ -123,7 +123,7 @@ if (currentTask == "build"){
   },
   
   config.plugins.push(
-  new WebpackAssetsManifest({"output": "assets-manifest.json"}),
+  new WebpackAssetsManifest({"output": "asset-manifest.json"}),
   new CleanWebpackPlugin(), 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
   new RunAfterCompile(),
