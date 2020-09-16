@@ -11,6 +11,7 @@ import Project from './modules/project.js'
 import Cert from './modules/cert.js'
 import ContactUs from './modules/form.js'
 import Feedback from './modules/feedback.js'
+import Search from './modules/search.js'
 import GetFeedback from './modules/getfeedback.js'
 
 const filterContainer = document.querySelector('.filter')
@@ -83,6 +84,7 @@ return new Gallery(certsList);
 }
 
 const loadFeedback = async () =>{
+ const feedbackStage = document.getElementById('feedbackStage')
  
 try {
   const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/feedback');
@@ -151,6 +153,18 @@ const feedbackContainer = document.getElementById('feedbackContainer')
 if(feedbackContainer !== null){
 
 const feedback  = new Feedback();
+}
+
+const searchContainer = document.getElementById('searchContainer')
+
+if(searchContainer !== null){
+
+const search = async () =>  {
+const certsInfo = await loadCerts()
+const projectsInfo = await loadProjects()
+
+ return new Search(projectsInfo, certsInfo)}
+ search();
 }
 
 
