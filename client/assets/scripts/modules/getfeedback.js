@@ -17,9 +17,9 @@ class GetFeedback{
 loadFeedback(){
   console.log(this.feedbacklimited)
   if(this.feedbacklimited !== null){
-   if(this.feedbackLimit.length < 0){
+   if(this.feedbackLimit.length === 0){
     this.feedbacklimited.innerHTML +=`
-     <p>Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
+     <p class="d-block mx-auto text-center">Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
     return
    }
     for(const feedback of this.feedbackLimit){//add default thumb selection
@@ -39,9 +39,9 @@ loadFeedback(){
   }
   
   if(this.feedbackStage !== null){
-   if(this.feedback.length < 0){
-    this.feedback.innerHTML +=`
-     <p>Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
+   if(this.feedback.length === 0){
+    this.feedbackStage.innerHTML +=`
+     <p class="d-block mx-auto text-center">Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
     return
    }
     for(const feedback of this.feedback){//add default thumb selection
