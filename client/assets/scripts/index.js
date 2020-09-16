@@ -15,6 +15,11 @@ import Search from './modules/search.js'
 import GetFeedback from './modules/getfeedback.js'
 
 const filterContainer = document.querySelector('.filter')
+const projectsPane = document.getElementById('projectsPane')
+
+
+
+
 
 if(filterContainer !== null){
 let filter = new Filter()
@@ -28,7 +33,7 @@ const loadProjects = async () =>{
 try {
   const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/projects');
   projectsList = response.data;
-  const projectsPane = document.getElementById('projectsPane')
+ 
   
 if(projectsPane !== null){
  
@@ -46,7 +51,10 @@ if(projectsPane !== null){
  }
 }
 
-
+if(projectsPane !== null){
+  loadProjects()
+ 
+}
 
 const loadCerts = async () =>{
  
@@ -83,16 +91,19 @@ return new Gallery(certsList);
  }
 }
 
+ const feedbackContainer = document.getElementById('feedbackContainer')
+  const feedbackStage = document.getElementById('feedbackStage')
+
 const loadFeedback = async () =>{
- const feedbackStage = document.getElementById('feedbackStage')
+
  
 try {
   const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/feedback');
   feedbackList = response.data;
-  const feedbackContainer = document.getElementById('feedbackContainer')
+ 
   
 if(feedbackContainer !== null || feedbackStage !== null ){
- 
+
  return new GetFeedback(feedbackList);
 }else{
  
@@ -106,6 +117,12 @@ if(feedbackContainer !== null || feedbackStage !== null ){
   
  }
 }
+
+if(feedbackContainer !== null || feedbackStage !== null ){
+loadFeedback()
+ 
+}
+
 
 const certsPane = document.getElementById('certsPane')
 
@@ -148,7 +165,7 @@ if(contactDetails !== null){
 const contact  = new ContactUs();
 }
 
-const feedbackContainer = document.getElementById('feedbackContainer')
+
 
 if(feedbackContainer !== null){
 
@@ -168,6 +185,6 @@ const projectsInfo = await loadProjects()
 }
 
 
-document.getElementById('body').addEventListener('onload', loadFeedback());
+
 document.getElementById('body').addEventListener('onload', loadCerts());
-document.getElementById('body').addEventListener('onload', loadProjects());
+
