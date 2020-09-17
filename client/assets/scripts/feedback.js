@@ -24,7 +24,7 @@ if(feedbackContainer !== null || feedbackStage !== null ){
  
 }
 
- }catch (error){
+ }catch (error){ 
   
   console.error(error);
   
