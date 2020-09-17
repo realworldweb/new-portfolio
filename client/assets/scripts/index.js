@@ -184,7 +184,7 @@ import(/* webpackChunkName: "feedback"*/ "./modules/feedback").then(x => {
  
  })
  
- import(/* webpackChunkName: "getFeedback"*/ "./modules/getFeedback").then(x => {
+ import(/* webpackChunkName: "getFeedback"*/ "./modules/getfeedback").then(x => {
  if(typeof getFeedback == 'undefined'){
    
 			getFeedback = async(x)=> {
