@@ -48,13 +48,15 @@ let search
 	
 	import(/* webpackChunkName: "search"*/ "./modules/search").then(x => {
  if(typeof search == 'undefined'){
-   console.log(search)
-			  search = new x.default(projectList, certsList)
+   
+			search = async(x)=> {
+    const certsInfo = await loadCerts()
+    const projectsInfo = await loadProjects()
     
- }
-     
-     
-     }).catch(() => console.log("there was a problem"))
+   return new x.default(projectsInfo, certsInfo) }
+    
+    search(x)
+ }})
   
   
  }
