@@ -72,10 +72,10 @@ let config = {
 	entry: { 
  
  index: './client/assets/scripts/index.js', 
- projects: './client/assets/scripts/projects.js',
- certs: './client/assets/scripts/certs.js',
- contact: './client/assets/scripts/contact.js',
- feedback: './client/assets/scripts/feedback.js'
+ 
+
+
+ 
  
  },
  optimization: {

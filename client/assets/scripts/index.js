@@ -1,9 +1,9 @@
 import '../styles/styles.css'
 const regeneratorRuntime = require("regenerator-runtime")
-
 import Gallery from './modules/simplegallery.js'
 import loadCerts from './modules/loadcerts.js'
 import loadProjects from'./modules/loadprojects.js'
+import loadFeedback from'./modules/loadfeedback.js'
 
 
 let currentPage = document.title
@@ -35,7 +35,105 @@ certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-
 slides()
 }
 
+let projects
 
+if(currentPage === 'Portfolio Projects'){
+	
+	
+	import(/* webpackChunkName: "projects"*/ "./modules/projects.js").then(x => {
+ if(typeof projects == 'undefined'){
+   
+			projects = async(x)=> {
+    const projectsInfo = await loadProjects()
+    
+    
+   return new x.default(projectsInfo) }
+    
+    projects(x)
+ }else{
+  projects(x)
+  
+ }
+ 
+ })
+  
+  
+ }
+ 
+ let project
+
+if(currentPage === 'Portfolio Project'){
+	
+	
+	import(/* webpackChunkName: "project"*/ "./modules/project.js").then(x => {
+ if(typeof project == 'undefined'){
+   
+			project = async(x)=> {
+    const projectsInfo = await loadProjects()
+    
+    
+   return new x.default(projectsInfo) }
+    
+    project(x)
+ }else{
+  project(x)
+  
+ }
+ 
+ })
+  
+  
+ }
+
+let certs
+
+if(currentPage === 'Portfolio certificates'){
+	
+	
+	import(/* webpackChunkName: "certs"*/ "./modules/certs.js").then(x => {
+ if(typeof certs == 'undefined'){
+   
+			certs = async(x)=> {
+    const certsInfo = await loadCerts()
+    
+    
+   return new x.default(certsInfo) }
+    
+    certs(x)
+ }else{
+  certs(x)
+  
+ }
+ 
+ })
+  
+  
+ }
+ 
+  let cert
+
+if(currentPage === 'Portfolio certificate'){
+	
+	
+	import(/* webpackChunkName: "cert"*/ "./modules/cert.js").then(x => {
+ if(typeof cert == 'undefined'){
+   
+			cert = async(x)=> {
+    const certsInfo = await loadCerts()
+    
+    
+   return new x.default(certsInfo) }
+    
+    cert(x)
+ }else{
+  cert(x)
+  
+ }
+ 
+ })
+  
+  
+ }
 
  
 
@@ -56,11 +154,80 @@ let search
    return new x.default(projectsInfo, certsInfo) }
     
     search(x)
- }})
+ }else{
+  search(x)
+  
+ }
+ 
+ })
   
   
  }
 	
+ let feedback
+ let getFeedback
+ 
+ if(currentPage === 'Portfolio feedbackpage'){//load feedback scripts if feedback page is requested
+	
+import(/* webpackChunkName: "feedback"*/ "./modules/feedback").then(x => {
+ if(typeof feedback == 'undefined'){
+   
+			feedback = () => {
+    
+    return new x.default() }
+    
+    feedback(x)
+ }else{
+  feedback(x)
+  
+ }
+ 
+ })
+ 
+ import(/* webpackChunkName: "getFeedback"*/ "./modules/getFeedback").then(x => {
+ if(typeof getFeedback == 'undefined'){
+   
+			getFeedback = async(x)=> {
+    const feedbackInfo = await loadFeedback()
+    
+    
+   return new x.default(feedbackInfo) }
+    
+    getFeedback(x)
+ }else{
+  getFeedback(x)
+  
+ }
+ 
+ })
+ 
+  
+  
+ }
+ 
+ let contact
+ 
+ if(currentPage === 'Portfolio contact-us'){//load contact scripts if contact page is requested
+	
+import(/* webpackChunkName: "contact"*/ "./modules/form").then(x => {
+ if(typeof contact == 'undefined'){
+   
+			contact = () => {
+    
+    return new x.default() }
+    
+    contact(x)
+ }else{
+  contact(x)
+  
+ }
+ 
+ })
+ 
+ }
+  
+  
+ 
 
 		   
 			   

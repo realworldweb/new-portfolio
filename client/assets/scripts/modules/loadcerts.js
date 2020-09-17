@@ -1,4 +1,3 @@
-const regeneratorRuntime = require("regenerator-runtime");
 import Axios from 'axios'
 let certsList;
 
