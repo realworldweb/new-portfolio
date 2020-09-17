@@ -1,3 +1,4 @@
+const regeneratorRuntime = require("regenerator-runtime");
 import Certs from './modules/certs.js'
 import Cert from './modules/cert.js'
 import loadCerts from './modules/loadcerts.js';

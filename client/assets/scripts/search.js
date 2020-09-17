@@ -1,3 +1,4 @@
+const regeneratorRuntime = require("regenerator-runtime");
 import Search from './modules/search.js'
 import loadProjects from'./modules/loadprojects.js'
 import loadCerts from './modules/loadcerts.js';

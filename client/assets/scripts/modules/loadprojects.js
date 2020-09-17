@@ -1,4 +1,5 @@
 import Axios from 'axios'
+const regeneratorRuntime = require("regenerator-runtime");
 let projectsList;
 
 
