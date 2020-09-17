@@ -1,10 +1,12 @@
-import '../styles/styles.css';
-const regeneratorRuntime = require("regenerator-runtime");
+import '../styles/styles.css'
+const regeneratorRuntime = require("regenerator-runtime")
 
-import Gallery from './modules/simplegallery.js';
-import loadCerts from './modules/loadcerts.js';
-import Certs from './modules/certs.js'
-import Cert from './modules/cert.js'
+import Gallery from './modules/simplegallery.js'
+import loadCerts from './modules/loadcerts.js'
+import loadProjects from'./modules/loadprojects.js'
+
+
+let currentPage = document.title
 
 
 
@@ -28,7 +30,7 @@ certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-
 </div>
 </div>
 `
- return new Gallery(certsInfo);
+ return new Gallery(certsInfo)
 }
 slides()
 }
@@ -37,35 +39,33 @@ slides()
 
  
 
-
-const certsPane = document.getElementById('certsPane')
-
-if(certsPane !== null){
-
-const certs = async () =>  {
-const certsInfo = await loadCerts()
-
- return new Certs(certsInfo)}
- certs();
-}
+let search
 
 
+			   
+			   if(currentPage === 'Portfolio search'){
+	
+	
+	import(/* webpackChunkName: "search"*/ "./modules/search").then(x => {
+ if(typeof search == 'undefined'){
+   console.log(search)
+			  search = new x.default(projectList, certsList)
+    
+ }
+     
+     
+     }).catch(() => console.log("there was a problem"))
+  
+  
+ }
+	
 
+		   
+			   
+			   
+  
 
-const certDetails = document.getElementById('certDetails')
-
-if(certDetails !== null){
-
-const cert = async () =>  {
-const certsInfo = await loadCerts()
-
- return new Cert(certsInfo)}
- cert();
-}
-
-
-
-
+ 
 
 
 
