@@ -1,5 +1,8 @@
+
+
 const currentTask = process.env.npm_lifecycle_event
 const path = require('path')
+const webpack = require('webpack')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -66,7 +69,21 @@ let cssConfig = {
 		  })
 
 let config = {
-	entry: './client/assets/scripts/index.js',
+	entry: { 
+ 
+ index: './client/assets/scripts/index.js', 
+ projects: './client/assets/scripts/projects.js',
+ certs: './client/assets/scripts/certs.js',
+ search: './client/assets/scripts/search.js',
+ contact: './client/assets/scripts/contact.js',
+ feedback: './client/assets/scripts/feedback.js',
+ 
+ },
+ optimization: {
+	  splitChunks: { 
+    chunks: "all",
+   }
+ },
 	plugins: pages,
 	module: {
     rules: [
@@ -79,7 +96,7 @@ let config = {
 if (currentTask == "dev"){
 	cssConfig.use.unshift('style-loader')
 	config.output =  {
-    filename: 'bundled.js',
+    filename: '[name].bundled.js',
     path: path.resolve(__dirname, 'client')
   },
   config.devServer = {
@@ -93,9 +110,11 @@ if (currentTask == "dev"){
     host: '0.0.0.0'
   },
   config.mode = 'development'
+  
 	
 	
 }
+   
 
 if (currentTask == "build"){
 	config.module.rules.push({ 
@@ -118,11 +137,6 @@ if (currentTask == "build"){
     path: path.resolve(__dirname, 'docs')
   },
   config.mode = 'production',
-  config.optimization = {
-	  splitChunks: { chunks: "all" }
-  
-  },
-  
   config.plugins.push(
   new WebpackAssetsManifest({"output": "asset-manifest.json"}),
   new CleanWebpackPlugin(), 

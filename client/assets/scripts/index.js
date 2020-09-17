@@ -1,127 +1,41 @@
 import '../styles/styles.css';
 const regeneratorRuntime = require("regenerator-runtime");
-import Axios from 'axios';
-
 
 import Gallery from './modules/simplegallery.js';
-import Projects from './modules/projects.js'
+import loadCerts from './modules/loadcerts.js';
 import Certs from './modules/certs.js'
-import Filter from './modules/filter.js'
-import Project from './modules/project.js'
 import Cert from './modules/cert.js'
-import ContactUs from './modules/form.js'
-import Feedback from './modules/feedback.js'
-import Search from './modules/search.js'
-import GetFeedback from './modules/getfeedback.js'
-
-const filterContainer = document.querySelector('.filter')
-const projectsPane = document.getElementById('projectsPane')
 
 
 
 
-
-if(filterContainer !== null){
-let filter = new Filter()
-}
-
-let certsList;
-let projectsList;
-let feedbackList;
-const loadProjects = async () =>{
- 
-try {
-  const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/projects');
-  projectsList = response.data;
- 
-  
-if(projectsPane !== null){
- 
- return new Projects(projectsList);
-}else{
- 
- return projectsList;
- 
-}
-
- }catch (error){
-  
-  console.error(error);
-  
- }
-}
-
-if(projectsPane !== null){
-  loadProjects()
- 
-}
-
-const loadCerts = async () =>{
- 
- 
-try {
-  const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/certs');
-  certsList = response.data;
-  const certsContainer = document.getElementById('certsContainer')
+const certsContainer = document.getElementById('certsContainer')
   
 if(certsContainer !== null){
+ const slides = async () =>  {
+const certsInfo = await loadCerts()
+
 certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-center">
   <div class="row">
 <i id="control-left" class="fas fa-caret-down left"></i>
 <picture class="">
-<source id="large" sizes="1000px" srcset="assets/images/${certsList[certsList.length-6].certificate.large.url} 1100w" media="(min-width: 1200px)">
-<source id="medium" class="medium" sizes="700px" srcset="assets/images/${certsList[certsList.length-6].certificate.medium.url} 580w" media="(min-width: 1000px)">
-<source id="mediumxl" class="medium"  sizes="700px" srcset="assets/images/${certsList[certsList.length-6].certificate.medium.url} 780w" media="(min-width: 700px)">
-<img sizes="500px" srcset="assets/images/${certsList[certsList.length-6].certificate.small.url} 600w" src="assets/images/${certsList[certsList.length-6].certificate.small.url}" alt="${certsList[certsList.length-6].certificate.alt}" class="d-block mx-auto text-center gallery__main-pic">
+<source id="large" sizes="1000px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.large.url} 1100w" media="(min-width: 1200px)">
+<source id="medium" class="medium" sizes="700px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.medium.url} 580w" media="(min-width: 1000px)">
+<source id="mediumxl" class="medium"  sizes="700px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.medium.url} 780w" media="(min-width: 700px)">
+<img sizes="500px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.small.url} 600w" src="assets/images/${certsInfo[certsInfo.length-6].certificate.small.url}" alt="${certsInfo[certsInfo.length-6].certificate.alt}" class="d-block mx-auto text-center gallery__main-pic">
 </picture>
 <i id="control-right" class="fas fa-caret-down right"></i>
 </div>
 </div>
 `
-return new Gallery(certsList);
-}else{
- 
- return certsList;
- 
+ return new Gallery(certsInfo);
 }
- }catch (error){
-  
-  console.error(error);
-  
- }
+slides()
 }
 
- const feedbackContainer = document.getElementById('feedbackContainer')
-  const feedbackStage = document.getElementById('feedbackStage')
 
-const loadFeedback = async () =>{
 
  
-try {
-  const response = await Axios.get('https://confident-panini-5ece9c.netlify.app//.netlify/functions/server/feedback');
-  feedbackList = response.data;
- 
-  
-if(feedbackContainer !== null || feedbackStage !== null ){
-
- return new GetFeedback(feedbackList);
-}else{
- 
- return feedbackList;
- 
-}
-
- }catch (error){
-  
-  console.error(error);
-  
- }
-}
-
-if(feedbackContainer !== null || feedbackStage !== null ){
-loadFeedback()
- 
-}
 
 
 const certsPane = document.getElementById('certsPane')
@@ -135,16 +49,7 @@ const certsInfo = await loadCerts()
  certs();
 }
 
-const projectDetails = document.getElementById('projectDetails')
 
-if(projectDetails !== null){
-
-const project = async () =>  {
-const projectsInfo = await loadProjects()
-
- return new Project(projectsInfo)}
- project();
-}
 
 
 const certDetails = document.getElementById('certDetails')
@@ -158,33 +63,15 @@ const certsInfo = await loadCerts()
  cert();
 }
 
-const contactDetails = document.getElementById('contactDetails')
-
-if(contactDetails !== null){
-
-const contact  = new ContactUs();
-}
 
 
 
-if(feedbackContainer !== null){
-
-const feedback  = new Feedback();
-}
-
-const searchContainer = document.getElementById('searchContainer')
-
-if(searchContainer !== null){
-
-const search = async () =>  {
-const certsInfo = await loadCerts()
-const projectsInfo = await loadProjects()
-
- return new Search(projectsInfo, certsInfo)}
- search();
-}
 
 
 
-document.getElementById('body').addEventListener('onload', loadCerts());
+
+
+
+
+
 
