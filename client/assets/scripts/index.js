@@ -1,5 +1,5 @@
 import '../styles/styles.css'
-const regeneratorRuntime = require("regenerator-runtime")
+import regeneratorRuntime from "regenerator-runtime"
 import Gallery from './modules/simplegallery.js'
 import loadCerts from './modules/loadcerts.js'
 import loadProjects from'./modules/loadprojects.js'
