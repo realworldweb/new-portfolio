@@ -18,6 +18,12 @@ body{
  box-sizing: border-box;
 }
 
+.preload{
+ transition: none;
+ 
+ 
+}
+
 main{
  min-height: 70vh;
  
