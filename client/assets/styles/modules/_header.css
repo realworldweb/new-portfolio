@@ -2,7 +2,7 @@
  background-color: rgba(63,82,96,0.9);
  min-height: 80px;
  z-index: 5;
-
+ 
 
 &__toggle{
  position: absolute;
@@ -10,6 +10,11 @@
  top: 1rem;
 
 }
+
+&__tran{
+ transition: height 35s ease-in;
+}
+
 
 &__title{
  position: relative;
@@ -46,6 +51,7 @@
 &__navlinks{
  @mixin atLarge{
   margin-right: 8vw;
+  
  }
 @mixin atXLarge{
   margin-right: 12vw;
@@ -63,6 +69,5 @@
 &__download, &__searchbtn{
  background-color: #0a8927;
 }
-
 
 }

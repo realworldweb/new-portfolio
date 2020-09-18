@@ -4,7 +4,9 @@ import Gallery from './modules/simplegallery.js'
 import loadCerts from './modules/loadcerts.js'
 import loadProjects from'./modules/loadprojects.js'
 import loadFeedback from'./modules/loadfeedback.js'
+import MobileNav from './modules/mobilenav.js'
 
+const mobile = new MobileNav()
 
 let currentPage = document.title
 
