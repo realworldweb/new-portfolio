@@ -19,40 +19,40 @@ max-width: 70%;
 
 }
 
-.left, .right{
+ .caret{
  display: none;
  
  @mixin atMedium{
  display: inline-block;
  position: relative;
  top: 30%;
- transform: rotate(90deg) translateY(-80%);
+ left: 7%;
  color: #f1ede1;
- }
  @mixin atLarge{
-  transform: rotate(90deg) translateY(-90%);
+   left: 10%;
+  }
+ 
+ &--right{
+  left: -7%;
+  @mixin atLarge{
+   left: -10%;
+  }
  }
+ 
+ }
+ 
  
 }
 
-.left:hover, .right:hover{
+.caret:hover{
  
  color: rgba($mainCream, .7);
- 
- 
 }
 
-.right{
 
- transform: rotate(270deg) translateY(-80%);
-
- @mixin atLarge{
-  
-  transform: rotate(270deg) translateY(-90%);
- }
  
  
-}
+
 
 &__thumb{
 transform: scale(0.8);
@@ -77,16 +77,11 @@ transition: all ease-out .5s;
  border-radius: 10%;
  width: 70%;
  
- 
- .left{
- transform: rotate(90deg) translateX(40%);
+ svg{
+  
+  
+   font-size: 3.5rem;
  }
- 
- .right{
-  transform: rotate(270deg) translateX(-41%);
- }
- 
- 
 }
  
 
