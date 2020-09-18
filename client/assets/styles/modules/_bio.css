@@ -36,33 +36,36 @@
  font-size: 4rem;
  margin-top: -10rem;
 }
+@mixin atbootstrapXL{
+ 
+  left: 20%;
+ }
 }
 
 &__top{
  @mixin atMedium{
   position: relative;
-  left: 7%;
+  
  }
- @mixin atLarge{
  
-  left: 20%;
- }
  
  @mixin atbootstrapXL{
  
-  left: 0%;
+  left: -10%;
  }
   
  }
 
-&__support{
- 
+&__left{
+ position: relative;
  @mixin atMedium{
-  transform: translateX(-45%) translateY(-300%);
-  
+ position: absolute;
+ max-width: 40%;
+ margin-top: 20%;
  }
  @mixin atLarge{
- transform: translateX(-7%) translateY(-300%);
+ /*transform: translateX(-7%) translateY(-300%);*/
+ margin-top: 15%;
  }
  
  @mixin atFull{
@@ -72,9 +75,11 @@
  
 }
 
+
 &__full-columns{
 @mixin atMedium{
-transform: translateX(-7%) translateY(-40%);
+/*transform: translateX(-7%) translateY(-40%);*/
+margin-top: 5%;
 }
 }
 

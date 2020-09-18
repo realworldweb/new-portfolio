@@ -42,25 +42,27 @@
  </nav>
  </header>
  <main id="main" class="d-block position-relative mb-5">
-  <div class="container bg-white d-block mx-auto position-relative mb-5 pb-3 pb-md-0 bio">
-   <picture class="position-relative mx-auto ml-md-1 mr-md-5 d-md-inline float-md-left">
+  <div class="container bg-white d-block mx-auto position-relative mb-5 pb-3 pb-md-0 clearfix bio">
+   <picture class="position-relative mx-auto ml-md-1 mr-md-5 d-md-inline float-md-left main__pic-container">
       <source sizes="500px" srcset="/assets/images/large-bio.webp 500w" media="(min-width: 1800px)">
       <source sizes="400px" srcset="/assets/images/large-bio.webp 452w" media="(min-width: 1200px)">
       <source sizes="291px" srcset="/assets/images/medium-bio.webp 350w" media="(min-width: 768px)">
-      <img sizes="180px" srcset="/assets/images/small-bio.webp 300w" src="/assets/images/small-bio.webp" alt="dapper bio pic" class="d-block mx-auto bio__pic">
+      <img sizes="180px" srcset="/assets/images/small-bio.webp 300w" src="/assets/images/small-bio.webp" alt="dapper bio pic" class="d-block position-relative mx-auto bio__pic">
    </picture>
-  <h1 class="d-block ml-md-5 text-center bio__header">Biography</h1>
-  <div class="d-flex-column ml-md-5 px-lg-5 px-md-1 px-lg-0">
-  <div class="bio__top">
+  <h1 class="d-block ml-md-5 text-center d-xl-inline text-xl-left bio__header">Biography</h1>
+  <div class="d-flex-column position-relative  ml-md-5 px-lg-5 px-md-1 px-lg-0">
+  <div class="bio__top float-md-right">
 	 <p><span class="mr-5 d-block d-sm-inline  mr-md-3">Name: &nbsp; &nbsp; &nbsp;</span><span class="ml-sm-5">Paul Rooney</span><span></span></p>
 	 <p><span class="mr-5 d-block d-sm-inline mr-md-3">Education:</span><span class="ml-sm-5">Bsc in Business and IT</span><span class="d-block w-60 bio__info--second-line"> &#40;major web development&#41;</span><span></span></p>
 	 <p><span class="mr-2 d-block d-sm-inline mr-md-3">Git-Hub:</span><span class="ml-sm-5"><a href="https://github.com/realworldweb" class="bio__link">https://github.com/realworldweb</a></span><span></span></p>
 	 <p><span class="mr-5 d-block d-sm-inline  mr-md-2">Main-Skills:</span><span class="ml-sm-5">HTML, CSS and JavaScript</span><span></span></p>
-	 </div>
   <p class="bio__support"><span class="mr-5 d-block d-sm-inline mr-md-2">Support-skills:</span><span class="ml-sm-5">Git, Npm and post-css</span><span></span></p>
-	 <div class="d-flex-column bio__full-columns">
+  </div>
+	 <div class="bio__left float-left-md">
   <p><span class="mr-5 d-block d-sm-inline mr-md-2">Familar-With:</span><span class="ml-sm-5">PHP, Mysql and DBMS</span><span></span></p>
 	 <p><span class="mr-5 d-block d-sm-inline mr-md-2">Looking-for:</span><span class="ml-sm-5">Entry level position at any payscale</span><span></span></p>
+  </div>
+  <div class="d-flex-column float-md-left bio__full-columns">
 	 <p><span class="mr-5 d-block d-sm-inline mr-md-3">Foreword:</span><span>I have been developing for many years.
 	   recently I have been regearing towards learning industry standards like structured post-css and object-orientated javascript. 
 	    As well as industry tools such git and npm. I continue to grow my skills and have added Things like node.js express servers and 
