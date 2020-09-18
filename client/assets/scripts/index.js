@@ -37,10 +37,34 @@ certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-
 slides()
 }
 
+
+let filter
+
+if(currentPage === 'Portfolio Projects' || currentPage === 'Portfolio certificates'){
+
+ import(/* webpackChunkName: "filter"*/ "./modules/filter").then(x => {
+ if(typeof filter == 'undefined'){
+   
+			filter = () => {
+    
+    return new x.default() }
+    
+    filter(x)
+ }else{
+  filter(x)
+  
+ }
+ 
+ })
+
+}
+
 let projects
+
 
 if(currentPage === 'Portfolio Projects'){
 	
+
 	
 	import(/* webpackChunkName: "projects"*/ "./modules/projects.js").then(x => {
  if(typeof projects == 'undefined'){
