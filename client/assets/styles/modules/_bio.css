@@ -64,13 +64,10 @@
  margin-top: 20%;
  }
  @mixin atLarge{
- /*transform: translateX(-7%) translateY(-300%);*/
  margin-top: 15%;
  }
  
- @mixin atFull{
- transform: translateX(0%) translateY(0%);
- }
+ 
  
  
 }
@@ -78,7 +75,7 @@
 
 &__full-columns{
 @mixin atMedium{
-/*transform: translateX(-7%) translateY(-40%);*/
+
 margin-top: 5%;
 }
 }

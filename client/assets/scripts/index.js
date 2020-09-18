@@ -253,14 +253,7 @@ import(/* webpackChunkName: "contact"*/ "./modules/form").then(x => {
  }
   
   
- document.getElementById('body').addEventListener('load', removePreload())
 
-function	removePreload(){
-  
- document.getElementById('body').classList.remove('preload')
-
-
- }  
 			   
 			   
   
