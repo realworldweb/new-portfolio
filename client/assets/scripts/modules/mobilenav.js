@@ -19,18 +19,17 @@ run(){
  if(this.togglerState === 'false'){
   
   this.togglerState = 'true'
-  document.querySelector(head).classList.add('collapsing')
+ 
   
-  setTimeout(function(){
- document.querySelector(head).classList.remove('collapsing')
- document.querySelector(head).classList.add('header__tran')
-}, 50)
-
+  
+  document.querySelector('.header').style.height = '292px'
+  document.querySelector(head).style.position = 'absolute'
   document.querySelector(head).classList.add('show')
-  document.querySelector(head).classList.remove('header__tran')
+
+  
  }else{
   this.togglerState = 'false'
- 
+    document.querySelector('.header').style.height= ''
   document.querySelector(this.togglerArea).classList.remove('show')
   
  }

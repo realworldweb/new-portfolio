@@ -2,7 +2,7 @@
  background-color: rgba(63,82,96,0.9);
  min-height: 80px;
  z-index: 5;
- 
+
 
 &__toggle{
  position: absolute;
@@ -11,9 +11,7 @@
 
 }
 
-&__tran{
- transition: height 35s ease-in;
-}
+
 
 
 &__title{
@@ -39,6 +37,7 @@
   margin-top: 0;
   margin-left: 35vw;
   font-size: 1.3rem;
+  transition: all 300s ease-in 35s;
  }
  @mixin atLarge{
   margin-left: 18vw;
