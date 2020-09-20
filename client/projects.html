@@ -50,7 +50,7 @@
 </head>
 <body id="body" >
  <header>
- <nav class="navbar navbar-expand-lg navbar-dark header">
+ <nav class="navbar navbar-expand-lg navbar-dark header header--navclosed">
   <div class="container-fluid mx-xl-5">
   <a class="navbar-brand p-3 shadow-large header__title" href="/"><br class="d-none d-md-static">Realworld web<br> Development</a>
   <div class="header__navmain">
@@ -58,7 +58,7 @@
     <span class="navbar-toggler-icon pb-3"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="d-none text-center justify-content-right align-items-center mr-5 flex-column flex-lg-row d-lg-flex float-lg-right position-lg-relative" id="navbarSupportedContent">
     <ul class="navbar-nav header__navlinks">
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
@@ -71,10 +71,10 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-1 mr-xl-5" action="search.html" method="get">
-      <input class="form-control w-50 mr-2" name="search" type="search" placeholder="node.js" aria-label="Search">
+      <input type="text" name="search" placeholder="node.js" aria-label="Search" class="form-control w-50 mr-2">
       <button class="btn my-2 my-sm-0 text-white header__searchbtn" type="submit">Search</button>
     </form>
-    <a href="/assets/documents/resume.docx" type="button" class="btn btn-success mx-2 header__download"  download><span class="mx-2"><i class="far fa-file-alt"></i></span>Download Cv</a>
+    <a href="/assets/documents/resume.docx" class="btn btn-success mx-2 header__download"  download><span class="mx-2"><i class="far fa-file-alt"></i></span>Download Cv</a>
     </div>
     </div>
   </div>
