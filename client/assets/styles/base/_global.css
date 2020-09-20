@@ -52,7 +52,7 @@ main{
 
 .opacity{
  opacity: 1;
- transition: all .5s ease-in;
+ transition: opacity .5s ease-in;
  
  &--none{
   

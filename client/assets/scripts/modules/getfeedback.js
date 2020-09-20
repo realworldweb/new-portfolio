@@ -11,6 +11,11 @@ class GetFeedback{
   this.loadFeedback()
  }
 
+showContent(){
+ document.querySelector('.loader--cream').classList.add('opacity--none')
+ document.getElementById('feedbackContent').classList.remove('opacity--none')
+ 
+}
 
  
  
@@ -19,20 +24,21 @@ loadFeedback(){
   if(this.feedbacklimited !== null){
    if(this.feedbackLimit.length === 0){
     this.feedbacklimited.innerHTML +=`
-     <p class="d-block mx-auto text-center">Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
+     <p id="feedbackContent" class="d-block mx-auto text-center opacity opacity--none">Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
+    this.showContent()
     return
    }
     for(const feedback of this.feedbackLimit){//add default thumb selection
  
      this.feedbacklimited.innerHTML +=`
-     <div class="d-inline-block position-relative text-center mx-auto mt-3 p-4 feedback-display feedback-display--limited">
+     <div id="feedbackContent" class="d-inline-block position-relative text-center mx-auto mt-3 p-4 feedback-display feedback-display--limited">
      <p class="feedback-display__topic"><span class=" float-left feedback-display__feedback-label">Topic:&nbsp;</span><br>${feedback.about}</p>
      <p class="feedback-display__feedback"><span class=" float-left feedback-display__feedback-label">Feedback:</span><br>${feedback.body}</p>
      <p class="d-inline mr-5 feedback-display__name"><i>Name:&nbsp;${feedback.name}</i></p>
      <p class="d-inline ml-5 feedback-display__created-on"><i>Created on:&nbsp;${feedback.createdOn}</i></p>
      </div><br>`
     
-    
+    this.showContent()
     }
     this.feedbacklimited.innerHTML +=`<a href="allfeedback.html" class="d-block text-right m-5 feedback__link">See All Feedback<i class="fas fa-angle-double-right ml-2"></i></a>`
     return

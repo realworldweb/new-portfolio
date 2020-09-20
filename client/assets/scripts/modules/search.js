@@ -47,10 +47,10 @@ runSearch(){
    return mappedArray;
   })
  
- this.searchContainer.innerHTML +=`<div class="row justify-content-center  search__returned-projects">
+ this.searchContainer.innerHTML +=`<div class="row justify-content-center  search__returned-projects opacity opacity--none">
  <p class="col-12 d-block mx-auto text-center search-results__cat">Projects matching ${this.query}</p>
  </div>
- <div class=" row  justify-content-center search__returned-certs">
+ <div class=" row  justify-content-center search__returned-certs opacity opacity--none">
  <p class="col-12 d-block mx-auto text-center search-results__cat">Certificates matching ${this.query}</p>
  </div>`
  
@@ -89,7 +89,11 @@ runSearch(){
     
     
     } 
-  
+  setTimeout(function(){
+   document.querySelector('.loader').classList.add('opacity--none')
+   certLoad.classList.remove('opacity--none')
+   projectLoad.classList.remove('opacity--none')
+   },100)
  
  
 }

@@ -32,7 +32,7 @@ setProject(){
 const project = this.projectList.filter(project => {return project[this.queryUrl[0]] === this.query})
 const projectTags = project[0].frontTools.concat(project[0].backTools, project[0].devTools);
 
-this.projectContainer.innerHTML = `
+this.projectContainer.innerHTML = `<div id="trans" class="opacity opacity--none">
 <div class="d-block position-relative mx-auto bg-white pb-3 projectdetails__main">
 <picture>
 <source sizes="1000px" srcset="assets/images/${project[0].img.large.url} 1200w" media="(min-width: 1800px)">
@@ -56,6 +56,7 @@ this.projectContainer.innerHTML = `
 <h3 class="col-12 text-center mt-3">Foreword</h3>
 <p class="d-block mx-auto text-center">${project[0].foreword}</p>
 </div>
+</div>
    `
 const tagslist = document.getElementById('usedlist')
 for(const tag of projectTags){
@@ -65,6 +66,16 @@ tagslist.innerHTML +=`<li class="col-6 list-item">${tag}</li>`
  
 }
 
+
+
+
+setTimeout(function(){
+   
+  
+   console.log(document.getElementById('trans').classList)
+   document.getElementById('trans').classList.remove('opacity--none')
+  },100)
+}
 }
 
 
@@ -76,9 +87,6 @@ tagslist.innerHTML +=`<li class="col-6 list-item">${tag}</li>`
 
 
 
-
-
-}
 
 
 export default Project;

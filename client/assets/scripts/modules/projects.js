@@ -54,7 +54,7 @@ loadProjects(){
  
     for(const project of this.projectThumbs){//add default thumb selection
     
-     this.projectsPane.innerHTML +=`<a href="project.html?name=${project[0].name}" class="projects__card position-relative text-white mx-3 mr-2 mb-4">
+     this.projectsPane.innerHTML +=`<a href="project.html?name=${project[0].name}" class="projects__card position-relative text-white mx-3 mr-2 mb-4 opacity opacity--none">
  <picture>
   <source sizes="1000px" srcset="assets/images/${project[0].img.medium.url} 1200w" media="(min-width: 2200px)">
   <source sizes="700px" srcset="assets/images/${project[0].img.medium.url} 800w" media="(min-width: 1800px)">
@@ -68,6 +68,15 @@ loadProjects(){
     
     
     }
+    setTimeout(function(){
+     const projects = document.querySelectorAll('.projects__card')
+   document.querySelector('.loader').classList.add('opacity--none')
+   for(const project of projects){
+     project.classList.remove('opacity--none')
+
+   }    
+   },100)
+    
     
   }
 }

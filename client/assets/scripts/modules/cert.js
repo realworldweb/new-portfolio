@@ -32,7 +32,7 @@ setCert(){
 const cert = this.certList.filter(cert => {return cert[this.queryUrl[0]] === this.query})
 
 
-this.certContainer.innerHTML = `
+this.certContainer.innerHTML = `<div id="trans" class="opacity opacity--none">
 <div class="d-block position-relative mx-auto bg-white pb-3 certdetails__main">
 <picture>
 <source sizes="1000px" srcset="assets/images/${cert[0].certificate.large.url} 1200w" media="(min-width: 1800px)">
@@ -55,6 +55,7 @@ this.certContainer.innerHTML = `
 <h3 class="d-block position-relative text-center">Modules</h3>
 <ul class="list-unstyled d-block justify-content-center certdetails__modules-list">
 </ul>
+</div>
 </div>`
 
 const modules = document.querySelector('.certdetails__modules-list')
@@ -64,6 +65,15 @@ modules.innerHTML +=`<li class="col-12 text-center list-item">${module}</li>`
  
  
 }
+
+
+
+setTimeout(function(){
+   
+  
+   
+   document.getElementById('trans').classList.remove('opacity--none')
+  },100)
 
 }
 

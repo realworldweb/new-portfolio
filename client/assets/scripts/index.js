@@ -138,7 +138,7 @@ if(currentPage === 'Portfolio certificates'){
  
   let cert
 
-if(currentPage === 'Portfolio certificate'){
+if(currentPage === 'Portfolio Certificate'){
 	
 	
 	import(/* webpackChunkName: "cert"*/ "./modules/cert.js").then(x => {
