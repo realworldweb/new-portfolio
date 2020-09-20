@@ -6,12 +6,12 @@
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <meta name="keywords" content="devlopment, programming, coder, jobseeker, for hire">
  <meta name="description" content="portfolio site showcasing HTML, CSS and JavaScript">
- <link rel="stylesheet preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
  <title>Portfolio Homepage</title>
 </head>
 <body id="body" >
  <header>
- <nav class="navbar navbar-expand-lg navbar-dark header">
+ <nav class="navbar navbar-expand-lg navbar-dark header header--navclosed">
   <div class="container-fluid mx-xl-5">
   <a class="navbar-brand p-3 shadow-large header__title" href="/"><br class="d-none d-md-static">Realworld web<br> Development</a>
   <div class="header__navmain">
@@ -19,7 +19,7 @@
     <span class="navbar-toggler-icon pb-3"></span>
   </button>
 
-  <div class="d-none d-lg-flex float-lg-right position-lg-relative" id="navbarSupportedContent">
+  <div class="d-none text-center justify-content-right mr-5 flex-column flex-lg-row d-lg-flex float-lg-right position-lg-relative" id="navbarSupportedContent">
     <ul class="navbar-nav header__navlinks">
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
@@ -43,13 +43,13 @@
  </header>
  <main id="main" class="d-block position-relative mb-5">
   <div class="container bg-white d-block mx-auto position-relative mb-5 pb-3 pb-md-0 clearfix bio">
-   <picture class="position-relative mx-auto ml-md-1 mr-md-5 d-md-inline float-md-left main__pic-container">
+   <picture class="ml-md-1 mr-md-5 d-md-inline float-md-left main__pic-container">
       <source sizes="500px" srcset="/assets/images/large-bio.webp 500w" media="(min-width: 1800px)">
       <source sizes="400px" srcset="/assets/images/large-bio.webp 452w" media="(min-width: 1200px)">
       <source sizes="291px" srcset="/assets/images/medium-bio.webp 350w" media="(min-width: 768px)">
-      <img sizes="180px" srcset="/assets/images/small-bio.webp 300w" src="/assets/images/small-bio.webp" alt="dapper bio pic" class="d-block position-relative mx-auto bio__pic">
+      <img sizes="180px" srcset="/assets/images/small-bio.webp 300w" src="/assets/images/small-bio.webp" alt="dapper bio pic" class="position-relative bio__pic">
    </picture>
-  <h1 class="d-block ml-md-5 text-center d-xl-inline text-xl-left bio__header">Biography</h1>
+  <h1 class="d-block position-relative ml-md-5 text-center d-xl-inline text-xl-left bio__header">Biography</h1>
   <div class="d-flex-column position-relative  ml-md-5 px-lg-5 px-md-1 px-lg-0">
   <div class="bio__top float-md-right">
 	 <p><span class="mr-5 d-block d-sm-inline  mr-md-3">Name: &nbsp; &nbsp; &nbsp;</span><span class="ml-sm-5">Paul Rooney</span><span></span></p>

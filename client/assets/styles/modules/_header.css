@@ -1,8 +1,13 @@
 .header{
  background-color: rgba(63,82,96,0.9);
  min-height: 80px;
+ height: 300px;
  z-index: 5;
-
+ transition: height 2s;
+ 
+&--navclosed{
+ height: 80px;
+}
 
 &__toggle{
  position: absolute;
@@ -18,6 +23,7 @@
  position: relative;
  background-color: #3f5260;
  font-size: 1rem;
+
  
  @mixin atXSmall{
   position: absolute;
@@ -37,7 +43,7 @@
   margin-top: 0;
   margin-left: 35vw;
   font-size: 1.3rem;
-  transition: all 300s ease-in 35s;
+  
  }
  @mixin atLarge{
   margin-left: 18vw;
@@ -48,6 +54,14 @@
 }
 
 &__navlinks{
+transition: opacity 2s;
+  opacity: 1;
+ 
+ &--closed{
+  opacity: 0;
+  
+ }
+ 
  @mixin atLarge{
   margin-right: 8vw;
   

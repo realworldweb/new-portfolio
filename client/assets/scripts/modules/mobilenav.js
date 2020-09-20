@@ -15,29 +15,51 @@ this.toggler.addEventListener('click', e =>  this.run(e))
  
  
 run(){
+ 
  const head = this.togglerArea
+ const childEl = document.querySelector(head).children
+ for(const el of childEl){
+ 
+  el.style.transition = 'opacity 2s'
+  
+ }
  if(this.togglerState === 'false'){
   
+  
   this.togglerState = 'true'
- 
+  document.querySelector('.header').classList.remove('header--navclosed')
   
   
-  document.querySelector('.header').style.height = '292px'
-  document.querySelector(head).style.position = 'absolute'
-  document.querySelector(head).classList.add('show')
+ setTimeout(function(){
+  document.querySelector(head).classList.remove('d-none') 
+  document.querySelector(head).classList.add('d-flex')
+  
+  }, 400)
+  
+  for(const el of childEl){
+  el.style.opacity = 1
+  }
 
+  
+  
   
  }else{
   this.togglerState = 'false'
-    document.querySelector('.header').style.height= ''
-  document.querySelector(this.togglerArea).classList.remove('show')
   
- }
+    for(const el of childEl){
+ el.style.opacity = 0
+    }
+  setTimeout(function(){
+ document.querySelector('.header').classList.add('header--navclosed')
+  }, 100)
+  
+  setTimeout(function(){
+  document.querySelector(head).classList.add('d-none')
+  document.querySelector(head).classList.remove('d-flex')
+  }, 600)
+
+}
+}
 }
 
-
-
-}
-
-
-export default MobileNav
+export default MobileNav;
