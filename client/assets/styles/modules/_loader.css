@@ -1,13 +1,15 @@
 .loader {
   display: block;
   position: absolute;
-  top: 20%;
-  left: 47%;
+  margin-top: 20%;
+  left: 40%;
   height: 50px;
   width: 50px;
-  margin: -25px 0 0 -25px;
   color: $mainNavy;
- 
+ @mixin atSmall{
+  top: 20%;
+  
+ }
  p{
   font-size: 3rem;
   

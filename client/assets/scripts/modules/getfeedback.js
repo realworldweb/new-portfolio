@@ -11,11 +11,7 @@ class GetFeedback{
   this.loadFeedback()
  }
 
-showContent(){
- document.querySelector('.loader--cream').classList.add('opacity--none')
- document.getElementById('feedbackContent').classList.remove('opacity--none')
- 
-}
+
 
  
  
@@ -25,7 +21,10 @@ loadFeedback(){
    if(this.feedbackLimit.length === 0){
     this.feedbacklimited.innerHTML +=`
      <p id="feedbackContent" class="d-block mx-auto text-center opacity opacity--none">Doesn't look like there's any feedback yet.<br> Why not be the first to leave some!</p>`
-    this.showContent()
+   setTimeout(function(){ 
+   document.querySelector('.loader--cream').classList.add('opacity--none')
+ document.getElementById('feedbackContent').classList.remove('opacity--none')
+   },100)
     return
    }
     for(const feedback of this.feedbackLimit){//add default thumb selection
@@ -38,7 +37,9 @@ loadFeedback(){
      <p class="d-inline ml-5 feedback-display__created-on"><i>Created on:&nbsp;${feedback.createdOn}</i></p>
      </div><br>`
     
-    this.showContent()
+    setTimeout(function(){
+     document.querySelector('.loader--cream').classList.add('opacity--none')
+     document.getElementById('feedbackContent').classList.remove('opacity--none')},100)
     }
     this.feedbacklimited.innerHTML +=`<a href="allfeedback.html" class="d-block text-right m-5 feedback__link">See All Feedback<i class="fas fa-angle-double-right ml-2"></i></a>`
     return
