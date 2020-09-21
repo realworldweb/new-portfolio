@@ -72,7 +72,7 @@ tagslist.innerHTML +=`<li class="col-6 list-item">${tag}</li>`
 setTimeout(function(){
    
   
-   console.log(document.getElementById('trans').classList)
+   
    document.getElementById('trans').classList.remove('opacity--none')
   },100)
 }

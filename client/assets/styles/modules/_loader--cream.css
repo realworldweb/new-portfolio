@@ -1,6 +1,7 @@
 .loader--cream {
   display: block;
-  position: relative;
+  position: absolute;
+  margin-top: 5%;
   left: 33%;
   height: 50px;
   width: 50px;
