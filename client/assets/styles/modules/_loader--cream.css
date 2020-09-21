@@ -8,15 +8,23 @@
   color: $mainCream;
  
  p{
-  font-size: 3rem;
-  
- }
+  font-size: 1.5rem;
+
+  @mixin atMedium{
+  font-size: 2rem;
+  }
+  @mixin atLarge{
+   font-size: 2rem;
+  }
+  }
  
 &__animate{
  display: block;
  position: relative;
+ left: 45%;
+@mixin atLarge{
  left: 85%;
- 
+ }
 }
 
 
@@ -27,84 +35,53 @@
   width: 20%;
   height: 40px;
   background: rgba($mainCream, 0.7);
-  -webkit-animation: loader--cream 2s  infinite ease-in-out;
-          animation: loader--cream 2s  infinite ease-in-out;
+  animation: loader--cream 2s  infinite ease-in-out;
 }
 
 &__animate span:nth-child(2) {
   left: 11px;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 &__animate span:nth-child(3) {
   left: 22px;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 &__animate span:nth-child(4) {
   left: 33px;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 &__animate span:nth-child(5) {
   left: 44px;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 @keyframes loader--cream {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
+    transform: translateX(0px);
     background: rgba($mainCream, 0.7);
   }
   25% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+     transform: translateX(0px);
+     transform: translateX(0px);
+     transform: translateX(0px);
+     transform: translateX(0px);
     background: $mainCream;
   }
   50% {
-    -webkit-transform: translateX(15px);
-            transform: translateX(15px);
-    -webkit-transform: translateX(15px);
-            transform: translateX(15px);
+    transform: translateX(15px);
+    transform: translateX(15px);
     background: rgba($mainCream, 0.7);
   }
   100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+
+    transform: translateX(0px);
+    transform: translateX(0px);
     background: rgba($mainCream, 0.7);
   }
 }
-@-webkit-keyframes loader {
-  0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    background: rgba($mainCream, 0.7);
-  }
-  25% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    background: $mainCream;
-  }
-  50% {
-    -webkit-transform: translateX(15px);
-            transform: translateX(15px);
-    background: rgba($mainCream, 0.7);
-  }
-  100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    background: rgba($mainCream, 0.7);
-  }
-}
+
 }
