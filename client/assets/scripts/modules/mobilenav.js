@@ -19,17 +19,23 @@ run(){
 
  const head = this.togglerArea
  const childEl = document.querySelector(head).children
- if( this.load === true)
- for(const el of childEl){//set intial values for all children
  
-  el.style.transition = 'opacity 4s'
+ for(const el of childEl){//set intial values for all children
+ if( this.load === true){
+  el.style.transition = 'opacity 2s'
   el.style.opacity = 0
   
+ }else{
+  el.style.transition = 'opacity .5s'
+  el.style.opacity = 0
+ 
+ }
  }
  if(this.togglerState === 'false'){
   
   
   this.togglerState = 'true'
+  this.load = false
   document.querySelector('.header').classList.remove('header--navclosed')//open header
   
   
@@ -53,7 +59,7 @@ run(){
   
  }else{
   this.togglerState = 'false'
-  
+  this.load = true
     for(const el of childEl){//hide children
  el.style.opacity = 0
     }
