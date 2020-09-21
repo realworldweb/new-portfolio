@@ -3,7 +3,7 @@
  min-height: 80px;
  height: 300px;
  z-index: 5;
- transition: height 2s;
+ transition: height 1.5s;
  
 &--navclosed{
  height: 80px;
@@ -54,7 +54,7 @@
 }
 
 &__navlinks{
-transition: opacity 2s;
+transition: opacity 1s;
   opacity: 1;
  
  &--closed{
