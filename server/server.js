@@ -44,7 +44,7 @@ async function main (get){
  
  
  
- async function projectsMount(client){// load products and pass it to express route for processing.
+ async function projectsMount(client){// load projects and pass it to express route for processing.
  console.log('ran')
    projectsList = await client.db('portfolio').collection('project')
    
