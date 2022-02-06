@@ -41,7 +41,7 @@ this.projectContainer.innerHTML = `<div id="trans" class="opacity opacity--none"
 </picture>
 <h1 class="d-block text-center projectdetails__title">${project[0].name}</h1>
 
-<a type="button" href="${project[0].gitHub}" class="btn  text-center d-block d-lg-inline position-relative mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github-square mx-2" alt="github"></i>GitHub Source<span class="sr-only">Link to github source</span></a><br>
+<a type="button" href="${project[0].gitHub}" class="btn  text-center d-block d-lg-inline position-relative mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i class="fab fa-github-square mx-2" alt="github"></i>GitHub Source<span class="sr-only">Link to github source</span></a><br>
 <a type="button" href="${project[0].live}" class="btn text-center d-lg-inline d-block position-relative mx-auto mb-2 projectdetails__button" rel="noopener" target="_blank"><i class="fas fa-link mx-2"></i>Hosted Example</a>
 
 <div class="row justify-content-center"><span class="col-12 text-center projectdetails__type">Type:&nbsp;&nbsp;${project[0].type}</span></div>

@@ -23,7 +23,7 @@ prepareQuery(){
   
   if(this.query.length > 0){//catch query
   this.projectThumbs = this.projects.filter(project => {
-   return project[this.queryUrl[0]].includes(this.query)
+   return project[this.queryUrl[0]].includes(this.query.toLowerCase())
   
    
   }).map(project => {

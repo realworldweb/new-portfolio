@@ -1,3 +1,4 @@
+/* toggle for filter on mobile devices */
 class Filter{
 constructor(){
 this.filter = document.querySelector('.filter')
