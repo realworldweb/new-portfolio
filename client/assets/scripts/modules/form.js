@@ -76,7 +76,7 @@ sendrequest(){
  
  console.log('ran request')
 	
-	Axios.post('/.netlify/functions/send-email.js', postJson ).then(() => {
+	Axios.post('/.netlify/functions/send-email', postJson ).then(() => {
       console.log('ran') 
       this.run.remove()
       this.success()
