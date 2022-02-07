@@ -73,12 +73,15 @@ compileForm(){
 }
 
 sendrequest(){
+ 
+ console.log('ran request')
 	
-	Axios.post('/.netlify/functions/send-email', postJson ).then(() => {
+	Axios.post('/.netlify/functions/send-email.js', postJson ).then(() => {
       console.log('ran') 
       this.run.remove()
       this.success()
-    }).catch(() => {
+    }).catch((e) => {
+     console.log('ran catch', e)
       this.error.innerHTML = 'Sorry something went wrong please retry'
     })
 }

@@ -6,6 +6,8 @@ let body
 // const euClient = new SparkPost('<YOUR API KEY>', { origin: 'https://api.eu.sparkpost.com:443' });
 
 exports.handler = function(event, context, callback){
+ 
+ console.log(client);
 if (event.body) {
     body = JSON.parse(event.body)
   } else {
