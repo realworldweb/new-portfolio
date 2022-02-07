@@ -30,6 +30,7 @@ if (event.body) {
   .then(data => {
     console.log('Woohoo! You just sent your first mailing!');
     console.log(data);
+    callback(null,response)
   })
   .catch(err => {
     console.log('Whoops! Something went wrong');
