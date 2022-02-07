@@ -1,0 +1,87 @@
+.loader--cream {
+  display: block;
+  position: absolute;
+  margin-top: 5%;
+  left: 33%;
+  height: 50px;
+  width: 50px;
+  color: $mainCream;
+ 
+ p{
+  font-size: 1.5rem;
+
+  @mixin atMedium{
+  font-size: 2rem;
+  }
+  @mixin atLarge{
+   font-size: 2rem;
+  }
+  }
+ 
+&__animate{
+ display: block;
+ position: relative;
+ left: 45%;
+@mixin atLarge{
+ left: 85%;
+ }
+}
+
+
+&__animate span {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  width: 20%;
+  height: 40px;
+  background: rgba($mainCream, 0.7);
+  animation: loader--cream 2s  infinite ease-in-out;
+}
+
+&__animate span:nth-child(2) {
+  left: 11px;
+  animation-delay: 0.2s;
+}
+
+&__animate span:nth-child(3) {
+  left: 22px;
+  animation-delay: 0.3s;
+}
+
+&__animate span:nth-child(4) {
+  left: 33px;
+  animation-delay: 0.4s;
+}
+
+&__animate span:nth-child(5) {
+  left: 44px;
+  animation-delay: 0.5s;
+}
+
+@keyframes loader--cream {
+  0% {
+    transform: translateX(0px);
+    transform: translateX(0px);
+    background: rgba($mainCream, 0.7);
+  }
+  25% {
+     transform: translateX(0px);
+     transform: translateX(0px);
+     transform: translateX(0px);
+     transform: translateX(0px);
+    background: $mainCream;
+  }
+  50% {
+    transform: translateX(15px);
+    transform: translateX(15px);
+    background: rgba($mainCream, 0.7);
+  }
+  100% {
+
+    transform: translateX(0px);
+    transform: translateX(0px);
+    background: rgba($mainCream, 0.7);
+  }
+}
+
+}

@@ -1,0 +1,108 @@
+.bio{
+ margin-top: 160px;
+ box-shadow: 1px 1px rgba(0,0,0,.4),3px 3px grey;
+ z-index: 3;
+ 
+ @mixin atMedium{
+  margin-top: 300px;
+ }
+ 
+ @mixin atLarge{
+  font-size: 1.2rem;
+ }
+ 
+ &__pic-container{
+  
+ }
+
+&__pic{
+  left: 30%;
+ margin-top: -6em;
+ box-shadow: .5px .5px rgba(0,0,0,.4),1px 1px grey;
+ border-radius: 50%;
+ @mixin atMedium{
+  left: 20%;
+  box-shadow: 3px 3px rgba(0,0,0,.4),6px 6px grey;
+  border-radius: 0;
+ }
+ @mixin atLarge{
+  left: 32%;
+
+ }
+ 
+  @mixin atbootstrapXL{
+   left: 18%;
+  }
+ }
+ 
+
+
+&__header{
+ padding-top: 20%;
+ color: #3f5260;
+ margin-top: -4rem;
+ font-size: 2.5rem;
+ @mixin atXSmall{
+  padding-top: 15%;
+ }
+@mixin atMedium{
+ padding-top: 0;
+ font-size: 4rem;
+ margin-top: -10rem;
+}
+@mixin atbootstrapXL{
+ 
+  left: 20%;
+ }
+}
+
+&__top{
+ @mixin atMedium{
+  position: relative;
+  
+ }
+ 
+ 
+ @mixin atbootstrapXL{
+ 
+  left: -6%;
+ }
+  
+ }
+
+&__left{
+ position: relative;
+ @mixin atMedium{
+ position: absolute;
+ max-width: 40%;
+ margin-top: 20%;
+ }
+ @mixin atLarge{
+ margin-top: 15%;
+ }
+ 
+ 
+ 
+ 
+}
+
+
+&__full-columns{
+@mixin atMedium{
+
+margin-top: 5%;
+}
+}
+
+&__link{
+ color: #0072ed !important;
+ 
+}
+
+&__info--second-line{
+ @mixin atMedium{
+ margin-left: 10rem;
+ }
+}
+
+}

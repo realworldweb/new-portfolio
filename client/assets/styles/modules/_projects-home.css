@@ -1,0 +1,54 @@
+.projects{
+  width: 100vw;
+  
+  
+  h1{
+   font-size: 4rem;
+   color: $mainNavy;
+   
+   
+  }
+
+
+&__card{
+max-width: 400px;
+
+
+@mixin atXXLarge{
+max-width: 500px;
+ 
+}
+
+ 
+ img{
+  box-shadow: 3px 0 rgba(0,0,0,.4),6px 0 grey;
+  
+ }
+ }
+ 
+ 
+ 
+
+&__overlay{
+ top: 0;
+ left: 0;
+ width: 100%;
+ display: inline;
+ height: 100%;
+ background-color: rgba(63,82,96,0.7);
+ 
+ p{
+  font-size: 3rem;
+  font-weight: 500;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 0.8;
+  @mixin atLarge{
+   font-size: 5rem;
+   
+  }
+ }
+ 
+}
+
+}

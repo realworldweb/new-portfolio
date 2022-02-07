@@ -1,0 +1,77 @@
+.filter{
+ color: $mainNavy;
+ background-color: $mainNavy;
+ box-shadow: 3px 3px rgba(0,0,0,.4),6px 6px grey;
+ position: absolute;
+ transition: all .5s ease-out;
+ z-index: 3;
+ min-width: 50%;
+ 
+ &--hidden{
+  left: -200%;
+  max-width: 0%;
+  min-width: 0%;
+  
+  @mixin atMedium{
+   left: 0%;
+   position: static;
+   max-width: 50%;
+  }
+  
+ }
+ 
+
+
+&__toggle{
+ font-size: 1.2rem;
+ background-color: $mainNavy;
+ color: $mainCream;
+ z-index: 6;
+ transition: all .5s ease-out;
+&--opened{
+  svg{
+  transform: rotate(-180deg);
+  
+ }
+ 
+ span{
+  float: right;
+ }
+  
+  
+  
+ }
+ 
+}
+
+&__filters{
+ background-color: $mainCream;
+ p{
+  
+  font-size: 3rem;
+  
+ }
+ .list-group p{
+  font-weight: 800;
+  font-size: 1.4rem;
+  
+ }
+ 
+ .list-group a{
+  color: $mainNavy;
+  background-color: $mainCream;
+  font-weight: 500;
+  font-size: 1.2rem;
+  
+ }
+ 
+ 
+}
+
+
+
+
+
+
+
+}
