@@ -82,7 +82,7 @@ sendrequest(){
       this.success()
     }).catch((e) => {
      
-     let patch = e.includes(502)
+     let patch = e.toString().includes('502')
      if(patch === true){
        this.success()
      }
