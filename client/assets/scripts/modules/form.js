@@ -73,11 +73,20 @@ compileForm(){
 }
 
 sendrequest(){
+ 
+ console.log('ran request')
 	
 	Axios.post('/.netlify/functions/send-email', postJson ).then(() => {
+      console.log('ran') 
       this.run.remove()
       this.success()
-    }).catch(() => {
+    }).catch((e) => {
+     console.log(e.response);
+     let patch = e.toString().includes('502')
+     if(patch === true){
+       this.run.remove()
+       this.success()
+     }
       this.error.innerHTML = 'Sorry something went wrong please retry'
     })
 }
