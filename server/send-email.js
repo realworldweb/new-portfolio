@@ -1,13 +1,11 @@
 const SparkPost = require('sparkpost');
-const client = new SparkPost(process.env.SPARKPOST);
+const options = {
+  endpoint: 'https://api.eu.sparkpost.com'
+};
+const client = new SparkPost(process.env.SPARKPOST,options);   
 let body
 
-// If you have a SparkPost EU account you will need to pass a different `origin` via the options parameter:
-// const euClient = new SparkPost('<YOUR API KEY>', { origin: 'https://api.eu.sparkpost.com:443' });
-
 exports.handler = function(event, context, callback){
- 
- console.log(client);
 if (event.body) {
     body = JSON.parse(event.body)
   } else {
@@ -32,7 +30,10 @@ if (event.body) {
   .then(data => {
     console.log('Woohoo! You just sent your first mailing!');
     console.log(data);
-    callback(null,data)
+    callback(null,{
+      statusCode: 200,
+      body: JSON.stringify(data)
+    })
   })
   .catch(err => {
     console.log('Whoops! Something went wrong');

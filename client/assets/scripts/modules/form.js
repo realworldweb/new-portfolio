@@ -82,11 +82,6 @@ sendrequest(){
       this.success()
     }).catch((e) => {
      
-     let patch = e.toString().includes('502')
-     if(patch === true){
-       this.run.remove()
-       this.success()
-     }
       this.error.innerHTML = 'Sorry something went wrong please retry'
     })
 }
