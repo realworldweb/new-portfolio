@@ -81,7 +81,7 @@ sendrequest(){
       this.run.remove()
       this.success()
     }).catch((e) => {
-     if(e.contains(502) === true){
+     if(e.includes(502) === true){
        this.success()
      }
       this.error.innerHTML = 'Sorry something went wrong please retry'
