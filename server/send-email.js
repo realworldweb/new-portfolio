@@ -1,9 +1,9 @@
 const SparkPost = require('sparkpost');
-const client = new SparkPost(process.env.SPARKPOST);
+const client = new SparkPost(process.env.SPARKPOST, { origin: 'https://api.eu.sparkpost.com:443' });
 let body
 
 // If you have a SparkPost EU account you will need to pass a different `origin` via the options parameter:
-// const euClient = new SparkPost('<YOUR API KEY>', { origin: 'https://api.eu.sparkpost.com:443' });
+// const euClient = 
 
 exports.handler = function(event, context, callback){
 if (event.body) {
