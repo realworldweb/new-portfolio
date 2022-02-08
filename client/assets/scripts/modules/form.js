@@ -83,7 +83,7 @@ sendrequest(){
     }).catch((e) => {
      
      let patch = e.includes(502)
-     if(patch) === true){
+     if(patch === true){
        this.success()
      }
       this.error.innerHTML = 'Sorry something went wrong please retry'
