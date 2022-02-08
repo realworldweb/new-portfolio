@@ -1,6 +1,6 @@
 const SparkPost = require('sparkpost');
 const options = {
-  endpoint: 'https://api.eu.sparkpost.com/api/v1'
+  endpoint: 'https://api.eu.sparkpost.com'
 };
 const client = new SparkPost(process.env.SPARKPOST);   
 let body
