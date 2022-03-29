@@ -8,6 +8,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const glob = require('glob')
 const PurgeCSSPlugin = require('purgecss-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
@@ -88,7 +89,24 @@ let config = {
  optimization: {
 	  splitChunks: { 
     chunks: "all",
-   }
+   },
+   minimize: true,
+   minimizer: [new TerserPlugin(
+    {
+        parallel: true,
+        extractComments: true,
+        terserOptions: {
+            compress: {
+                ecma: 2020,
+                toplevel: true,
+                keep_infinity: true,
+                drop_console: true,
+                passes: 2
+            }
+        }
+        
+        
+    })]
  },
 	plugins: pages,
 	module: {
