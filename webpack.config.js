@@ -147,6 +147,7 @@ if (currentTask == "build"){
   new WebpackAssetsManifest({"output": "asset-manifest.json"}),
   new CleanWebpackPlugin(), 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
+  new PurgeCSSPlugin({paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),}),
   new RunAfterCompile(),
    new BuildDocs()
   )
