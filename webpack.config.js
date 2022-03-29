@@ -97,7 +97,7 @@ let config = {
         extractComments: true,
         terserOptions: {
             compress: {
-                ecma: 2020,
+                ecma: 4,
                 toplevel: true,
                 keep_infinity: true,
                 drop_console: true,
