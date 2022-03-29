@@ -5,8 +5,8 @@
  z-index: 5;
  transition: height 1.5s;
 
- /*!purge css ignore */
- 
+ /*!purgecss ignore */
+
 &--navclosed{
  height: 80px;
 }
