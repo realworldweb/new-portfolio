@@ -31,7 +31,7 @@ max-width: 70%;
  @mixin atLarge{
    left: 10%;
   }
-/*! purgecss end ignore */
+
  
  &--right{
   left: -7%;
@@ -45,12 +45,12 @@ max-width: 70%;
  
 }
 
-/*! purgecss ignore */
+
 .caret:hover{
  
  color: rgba($mainCream, .7);
 }
-
+/*! purgecss end ignore */
 
  
  
