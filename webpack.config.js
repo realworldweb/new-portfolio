@@ -8,7 +8,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const glob = require('glob')
 const PurgeCSSPlugin = require('purgecss-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
@@ -148,7 +147,6 @@ if (currentTask == "build"){
   new WebpackAssetsManifest({"output": "asset-manifest.json"}),
   new CleanWebpackPlugin(), 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
-  new PurgeCSSPlugin({paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),}),
   new RunAfterCompile(),
    new BuildDocs()
   )
