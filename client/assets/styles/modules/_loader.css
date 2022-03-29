@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 .loader {
   display: block;
   position: absolute;
@@ -97,3 +98,4 @@
 }
 
 }
+/*! purgecss end ignore */
