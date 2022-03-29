@@ -13,7 +13,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
 
 const PATHS = {
-  src: path.join(__dirname, 'src')
+  src: path.join(__dirname, 'docs')
 }
 
 const postCSSPlugins = [
