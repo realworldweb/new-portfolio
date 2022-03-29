@@ -89,24 +89,7 @@ let config = {
  optimization: {
 	  splitChunks: { 
     chunks: "all",
-   },
-   minimize: true,
-   minimizer: [new TerserPlugin(
-    {
-        parallel: true,
-        extractComments: true,
-        terserOptions: {
-            compress: {
-                ecma: 4,
-                toplevel: true,
-                keep_infinity: true,
-                drop_console: true,
-                passes: 2
-            }
-        }
-        
-        
-    })]
+   }
  },
 	plugins: pages,
 	module: {
