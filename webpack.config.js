@@ -6,8 +6,15 @@ const webpack = require('webpack')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const glob = require('glob')
+const PurgeCSSPlugin = require('purgecss-webpack-plugin')
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
+
+const PATHS = {
+  src: path.join(__dirname, 'src')
+}
 
 const postCSSPlugins = [
   require('postcss-import'),
@@ -140,6 +147,7 @@ if (currentTask == "build"){
   new WebpackAssetsManifest({"output": "asset-manifest.json"}),
   new CleanWebpackPlugin(), 
   new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
+  new PurgeCSSPlugin({paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),}),
   new RunAfterCompile(),
    new BuildDocs()
   )
