@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 html{
  min-width: 100%;
  max-width: 100%;
@@ -60,3 +61,4 @@ main{
  }
  
 }
+/*! purgecss end ignore */
