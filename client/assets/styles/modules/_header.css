@@ -5,11 +5,11 @@
  z-index: 5;
  transition: height 1.5s;
 
- /*!purgecss ignore */
+ 
  @mixin atSmall{
   height: 300px;
  }
-
+/*!purgecss ignore */
 &--navclosed{
  height: 80px;
 }
