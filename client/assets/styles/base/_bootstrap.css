@@ -7104,6 +7104,7 @@ button.bg-dark:focus {
   .d-lg-table-cell {
     display: table-cell !important;
   }
+  /*! purgecss ignore */
   .d-lg-flex {
     display: -ms-flexbox !important;
     display: flex !important;
