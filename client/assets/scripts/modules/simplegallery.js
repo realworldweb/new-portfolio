@@ -40,12 +40,12 @@ class Gallery{
   for(const img of this.imgArray){//add default thumb
   let thumb = `<picture>
   <source srcset="/assets/images/${img[0].small.url}" media="(min-width: 1300px)">
-  <img src="/assets/images/${img[0].thumb.url}" alt="${img[0].alt}" id="${count}" name="gallery ${count}" class="mx-2 mb-2 gallery__thumb">
+  <img src="/assets/images/${img[0].thumb.url}" alt="${img[0].alt}" id="${count}" name="gallery ${count}" class="mx-2 mb-2 gallery__thumb" width="500" height="350">
   </picture>`
   if(count === this.currentImage){//add styled active thumb
    thumb = `<picture>
   <source srcset="/assets/images/${img[0].small.url}" media="(min-width: 1300px)">
-   <img src="/assets/images/${img[0].thumb.url}" alt="${img[0].alt}" id="${count}" name="gallery ${count}" class="mx-2 mb-2 gallery__thumb gallery__thumb--active">
+   <img src="/assets/images/${img[0].thumb.url}" alt="${img[0].alt}" id="${count}" name="gallery ${count}" class="mx-2 mb-2 gallery__thumb gallery__thumb--active" width="500" height="350" >
    </picture>`
    
    
