@@ -118,7 +118,6 @@ if (currentTask == "dev"){
   config.mode = 'development'
   
 	
-	
 }
    
 

@@ -7988,6 +7988,7 @@ button.bg-dark:focus {
   .float-lg-left {
     float: left !important;
   }
+  /*! purgecss ignore */
   .float-lg-right {
     float: right !important;
   }
