@@ -7974,6 +7974,7 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 768px) {
+  /*! purgecss start ignore */
   .float-md-left {
     float: left !important;
   }
@@ -7983,6 +7984,7 @@ button.bg-dark:focus {
   .float-md-none {
     float: none !important;
   }
+  /*! purgecss end ignore */
 }
 
 @media (min-width: 992px) {
@@ -8185,6 +8187,7 @@ button.bg-dark:focus {
   height: 100vh !important;
 }
 
+/*! purgecss start ignore */
 .m-0 {
   margin: 0 !important;
 }
@@ -9996,7 +9999,7 @@ button.bg-dark:focus {
     margin-left: auto !important;
   }
 }
-
+/*! purgecss end ignore */
 .stretched-link::after {
   position: absolute;
   top: 0;
