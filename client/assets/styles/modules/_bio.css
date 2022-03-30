@@ -14,22 +14,26 @@
  
 
 &__pic{
-  left: 30%;
+  left: 25%;
+  width: 50%;
+  height: auto;
  margin-top: -6em;
  box-shadow: .5px .5px rgba(0,0,0,.4),1px 1px grey;
  border-radius: 50%;
  @mixin atMedium{
   left: 20%;
+  width: 100%;
   box-shadow: 3px 3px rgba(0,0,0,.4),6px 6px grey;
   border-radius: 0;
  }
  @mixin atLarge{
   left: 32%;
-
+  
  }
  
   @mixin atbootstrapXL{
    left: 18%;
+  
   }
  }
  
