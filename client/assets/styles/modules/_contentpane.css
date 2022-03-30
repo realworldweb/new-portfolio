@@ -18,7 +18,7 @@ font-size: 3rem;
 }
 
 .projects__card{
- 
+ width: 70%;
  @mixin atMedium {
   width: 80%;
   height: auto;
