@@ -37,7 +37,7 @@ this.projectContainer.innerHTML = `<div id="trans" class="opacity opacity--none"
 <picture>
 <source sizes="1000px" srcset="assets/images/${project[0].img.large.url} 1200w" media="(min-width: 1800px)">
 <source sizes="700px" srcset="assets/images/${project[0].img.medium.url} 800w" media="(min-width: 1000px)">
-<img sizes="500px" srcset="assets/images/${project[0].img.small.url} 550w" src="assets/images/${project[0].img.small.url}" alt="${project[0].img.alt}" class="d-block mx-auto float-lg-left ml-lg-2 projectdetails__main-pic">
+<img sizes="500px" srcset="assets/images/${project[0].img.small.url} 550w" src="assets/images/${project[0].img.small.url}" alt="${project[0].img.alt}" class="d-block mx-auto float-lg-left ml-lg-2 projectdetails__main-pic" width="500" height="350">
 </picture>
 <h1 class="d-block text-center projectdetails__title">${project[0].name}</h1>
 

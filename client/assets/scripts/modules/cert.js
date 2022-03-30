@@ -37,7 +37,8 @@ this.certContainer.innerHTML = `<div id="trans" class="opacity opacity--none">
 <picture>
 <source sizes="1000px" srcset="assets/images/${cert[0].certificate.large.url} 1200w" media="(min-width: 1800px)">
 <source sizes="700px" srcset="assets/images/${cert[0].certificate.medium.url} 800w" media="(min-width: 1000px)">
-<img sizes="500px" srcset="assets/images/${cert[0].certificate.small.url} 550w" src="assets/images/${cert[0].certificate.small.url}" alt="${cert[0].certificate.alt}" class="d-block mx-auto float-lg-left ml-lg-2 certdetails__main-pic">
+<img sizes="500px" srcset="assets/images/${cert[0].certificate.small.url} 550w" src="assets/images/${cert[0].certificate.small.url}" alt="${cert[0].certificate.alt}" class="d-block mx-auto float-lg-left ml-lg-2 certdetails__main-pic" width="500"
+>
 </picture>
 <h1 class="d-block text-center certdetails__title">${cert[0].name}</h1>
 <p class="d-block mx-auto mt-3 text-center certdetails__desc">${cert[0].desc}</p>

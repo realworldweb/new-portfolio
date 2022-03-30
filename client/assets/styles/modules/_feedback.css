@@ -7,15 +7,19 @@ color: $mainCream;
  font-weight: 500;
  font-size: 1.2rem;
  min-height: 60vh;
+ min-width: 100vw;
  
+ @mixin atMedium{
+  min-width: 50vw;
+ }
  
  @mixin atLarge{
-  max-width: 40vw;
+  min-width: 40vw;
   font-size: 1.5rem;
  }
  
  @mixin atXXLarge{
-  max-width: 28vw;
+  min-width: 28vw;
  }
  
  
@@ -51,7 +55,7 @@ h1{
  
  @mixin atLarge{
   max-width: 65vw;
-  min-height: 80vw;
+  min-height: 80%;
   font-size: 2rem;
   padding-top: 5%;
  }
