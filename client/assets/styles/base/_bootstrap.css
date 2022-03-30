@@ -7533,6 +7533,7 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 768px) {
+  /*! purgecss ignore */
   .flex-md-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
