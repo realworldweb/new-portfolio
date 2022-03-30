@@ -10084,6 +10084,7 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 1200px) {
+  /*! purgecss ignore */
   .text-xl-left {
     text-align: left !important;
   }
