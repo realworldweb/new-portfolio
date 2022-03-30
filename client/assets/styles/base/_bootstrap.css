@@ -7671,6 +7671,7 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 992px) {
+  /*! purgecss ignore */
   .flex-lg-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -7988,7 +7989,7 @@ button.bg-dark:focus {
   .float-lg-left {
     float: left !important;
   }
-  /*! purgecss ignore */
+  
   .float-lg-right {
     float: right !important;
   }
