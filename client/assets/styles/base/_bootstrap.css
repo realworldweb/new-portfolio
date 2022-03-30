@@ -6974,6 +6974,7 @@ button.bg-dark:focus {
   border-radius: 0 !important;
 }
 
+/*! purgecss ignore */
 .clearfix::after {
   display: block;
   clear: both;
