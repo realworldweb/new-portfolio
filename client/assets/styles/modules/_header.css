@@ -89,3 +89,14 @@ transition: opacity 1s;
 }
 
 }
+
+.header-svg{
+  overflow: visible;
+  display: inline;
+  margin-right: 4px;
+  position: relative;
+  font-size: 1.2rem;
+  height: 1.2rem;
+  width: 1.2rem;
+
+}

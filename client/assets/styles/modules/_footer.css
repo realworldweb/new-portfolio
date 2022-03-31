@@ -30,7 +30,7 @@
 &__social{
  font-size: 4rem;
  
- @mixin atMedium{
+@mixin atMedium{
    max-width: 150px;
   font-size: 3rem;
   
@@ -49,6 +49,20 @@
 }
 
 
- 
+.nav-svg{
+  overflow: visible;
+  display: block;
+  position: relative;
+  font-size: 4rem;
+  height: 4rem;
+  width: 4rem;
+
+  @mixin atMedium{
+    font-size: 3rem;
+  height: 3rem;
+  width: 3rem;
+  }
+
+ } 
  
  
