@@ -21,14 +21,14 @@ const certsInfo = await loadCerts()
 
 certsContainer.innerHTML =`<div class="d-flex flex-wrap gallery justify-content-center">
   <div class="row">
-<i id="control-left" class="fas fa-caret-left caret"></i>
+  <svg xmlns="http://www.w3.org/2000/svg" class="caret caret--left" width="3.5rem" height="3.5rem" viewbox="0 0 1.764 3.528"><path fill="currentColor" stroke-width=".353" d="M1.764 0L0 1.764l1.764 1.764z"/></svg>
 <picture class="">
 <source id="large" sizes="1000px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.large.url} 1100w" media="(min-width: 1200px)">
 <source id="medium" class="medium" sizes="700px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.medium.url} 580w" media="(min-width: 1000px)">
 <source id="mediumxl" class="medium"  sizes="700px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.medium.url} 780w" media="(min-width: 700px)">
 <img sizes="500px" srcset="assets/images/${certsInfo[certsInfo.length-6].certificate.small.url} 600w" src="assets/images/${certsInfo[certsInfo.length-6].certificate.small.url}" alt="${certsInfo[certsInfo.length-6].certificate.alt}" class="d-block mx-auto text-center gallery__main-pic" width="500" height="350">
 </picture>
-<i id="control-right" class="fas fa-caret-right caret caret--right"></i>
+<svg xmlns="http://www.w3.org/2000/svg" class="caret caret--right" width="3.5rem" height="3.5rem" viewbox="0 0 1.764 3.528"><path fill="currentColor" stroke-width=".353" d="M0 3.528l1.764-1.764L0 0z"/></svg>
 </div>
 </div>
 `

@@ -10,8 +10,25 @@
   
  &__link{
   
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: $mainCream;
+
+ & svg{
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  @mixin atSmall{
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  }
+
+  }
+  @mixin atSmall{
+
+    font-size: 2rem;
+  }
+  
   &:hover{
    
    color: #fff;

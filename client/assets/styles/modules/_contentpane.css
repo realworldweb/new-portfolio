@@ -3,7 +3,8 @@
 color: $mainNavy;
 
 &__title{
-font-size: 2rem;
+font-size: 6.5vw;
+
 
 @mixin atSmall{
 font-size: 3rem;
